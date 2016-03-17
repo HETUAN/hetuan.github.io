@@ -90,41 +90,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#CentOS上安装Git</p>
-<p>##确保已安装了依赖的包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install curl </span><br><span class="line">yum install curl-devel </span><br><span class="line">yum install zlib-devel </span><br><span class="line">yum install openssl-devel </span><br><span class="line">yum install perl </span><br><span class="line">yum install cpio </span><br><span class="line">yum install expat-devel </span><br><span class="line">yum install gettext-devel</span><br></pre></td></tr></table></figure>
+        <h2 id="确保已安装了依赖的包"><a href="#确保已安装了依赖的包" class="headerlink" title="确保已安装了依赖的包"></a>确保已安装了依赖的包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install curl </span><br><span class="line">yum install curl-devel </span><br><span class="line">yum install zlib-devel </span><br><span class="line">yum install openssl-devel </span><br><span class="line">yum install perl </span><br><span class="line">yum install cpio </span><br><span class="line">yum install expat-devel </span><br><span class="line">yum install gettext-devel</span><br></pre></td></tr></table></figure>
 <p>这样也可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel</span><br></pre></td></tr></table></figure></p>
-<p>##下载最新的git包</p>
-<blockquote>
-<p>wget <a href="https://Github.com/Git/Git/archive/v2.3.0.tar.gz" target="_blank" rel="external">https://Github.com/Git/Git/archive/v2.3.0.tar.gz</a></p>
-</blockquote>
-<p>##解压</p>
-<blockquote>
-<p>tar xzvf v2.3.0.tar.gz</p>
-</blockquote>
-<p>##进入目录</p>
-<blockquote>
-<p>cd v2.3.0 -你的目录可能不是这个 </p>
-</blockquote>
-<p>##安装</p>
-<blockquote>
-<p>autoconf<br>./configure<br>make<br>sudo make install</p>
-</blockquote>
-<p>##检查下安装的版本，大功告成</p>
-<blockquote>
-<p>git –version</p>
-</blockquote>
-<p>###上面是熟练的人装逼用的</p>
-<p>###入门者请使用下面的而方法</p>
-<p>###安装Git - 使用软件包管理器<br>在CentOS安装Git的最简单的方法是使用yum包管理。以下命令将帮助您安装的Git软件。</p>
-<blockquote>
-<p>sudo yum install Git</p>
-</blockquote>
+<h2 id="下载最新的git包"><a href="#下载最新的git包" class="headerlink" title="下载最新的git包"></a>下载最新的git包</h2><pre><code class="bash">wget https://Github.com/Git/Git/archive/v2.3.0.tar.gz
+</code></pre>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><pre><code class="bash">tar xzvf v2.3.0.tar.gz
+</code></pre>
+<h2 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h2><pre><code class="bash"><span class="built_in">cd</span> v2.3.0 -你的目录可能不是这个
+</code></pre>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code class="bash">autoconf 
+./configure 
+make 
+sudo make install
+</code></pre>
+<h2 id="检查下安装的版本，大功告成"><a href="#检查下安装的版本，大功告成" class="headerlink" title="检查下安装的版本，大功告成"></a>检查下安装的版本，大功告成</h2><pre><code class="bash">git --version
+</code></pre>
+<h3 id="上面是熟练的人装逼用的"><a href="#上面是熟练的人装逼用的" class="headerlink" title="上面是熟练的人装逼用的"></a>上面是熟练的人装逼用的</h3><h3 id="入门者请使用下面的而方法"><a href="#入门者请使用下面的而方法" class="headerlink" title="入门者请使用下面的而方法"></a>入门者请使用下面的而方法</h3><h3 id="安装Git-使用软件包管理器"><a href="#安装Git-使用软件包管理器" class="headerlink" title="安装Git - 使用软件包管理器"></a>安装Git - 使用软件包管理器</h3><p>在CentOS安装Git的最简单的方法是使用yum包管理。以下命令将帮助您安装的Git软件。</p>
+<pre><code class="bash">sudo yum install Git
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cilw5o2tz0000l6pvdrz1xsfm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cilwa1j960000qlpvnub8vlo7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -162,53 +150,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在CentOS-7安装Node-js"><a href="#在CentOS-7安装Node-js" class="headerlink" title="在CentOS 7安装Node.js"></a>在CentOS 7安装Node.js</h1><h2 id="从源码安装Node-js"><a href="#从源码安装Node-js" class="headerlink" title="从源码安装Node.js"></a>从源码安装Node.js</h2><p>首先我们要从源码安装Node.js。我真的很喜欢从源码安装软件。在你的CentOS 7机器上打开一个新的终端标签并运行以下命令 用来下载需要使用的安装文件。 </p>
-<blockquote>
-<p>wget <a href="http://nodejs.org/dist/v0.12.0/node-v0.12.0.tar.gz" target="_blank" rel="external">http://nodejs.org/dist/v0.12.0/node-v0.12.0.tar.gz</a> </p>
-</blockquote>
+        <h2 id="从源码安装Node-js"><a href="#从源码安装Node-js" class="headerlink" title="从源码安装Node.js"></a>从源码安装Node.js</h2><p>首先我们要从源码安装Node.js。我真的很喜欢从源码安装软件。在你的CentOS 7机器上打开一个新的终端标签并运行以下命令 用来下载需要使用的安装文件。</p>
+<pre><code class="bash">wget http://nodejs.org/dist/v0.12.0/node-v0.12.0.tar.gz
+</code></pre>
 <p>你可以从上面的命令中看到我们怎样利用wget来操作。<br>然后提取tar文件，如下所示。 </p>
-<blockquote>
-<p>tar xvf node-v0.12.0.tar.gz</p>
-</blockquote>
+<pre><code class="bash">tar xvf node-v0.12.0.tar.gz
+</code></pre>
 <p>然后使用下面的命令来改变工作目录节点。  </p>
-<blockquote>
-<p>cd node-v**</p>
-</blockquote>
+<pre><code class="bash"><span class="built_in">cd</span> node-v**
+</code></pre>
 <p>在编译我们的代码之前，需要在CentOS机器上安装一些软件包，这样可以我们编译。所以在你打开的的终端中，输入以下内容。</p>
-<blockquote>
-<p>sudo yum install gcc gcc-c++</p>
-</blockquote>
+<pre><code class="bash">sudo yum install gcc gcc-c++
+</code></pre>
 <p>等待这些软件包的安装和运行，用以下命令来配置和编译。</p>
-<blockquote>
-<p>./configure<br>make</p>
-</blockquote>
+<pre><code class="bash">./configure
+make
+</code></pre>
 <p>以上会需要一些时间来完成，别担心因为编译将需要一段时间。然后使用下面的命令来在你的系统上安装Node.js。</p>
-<blockquote>
-<p>sudo make install</p>
-</blockquote>
+<pre><code class="bash">sudo make install
+</code></pre>
 <p>安装完成之后，你就可以开始使用Node.js了。并为确保安装的版本正确，你可以使用以下命令检查。</p>
-<blockquote>
-<p>node –version</p>
-</blockquote>
+<pre><code class="bash">node --version
+</code></pre>
 <p>当运行上述命令时，我得到以下信息。</p>
-<blockquote>
-<p>v0.12.0</p>
-</blockquote>
+<pre><code class="bash">v0.12.0
+</code></pre>
 <p>##如何从EPEL库安装Node.js<br>另一个有效且简单的方法来安装Node.js就是从官方库。这同样确保您可以访问到EPEL库，你可以通过运行以下命令。</p>
-<blockquote>
-<p>sudo yum install epel-release<br>现在可以使用yum命令安装Node.js了。<br>sudo yum install nodejs<br>因为在开发过程中我需要管理节点包，我还要安装新公共管理的软件包管理器，使用以下命令。<br>sudo yum install npm</p>
-<p>##写我们的第一个Node.js程序。<br>在Node.js中写Hello World应用程序是很容易的！比Python简单。您需要做的就是在一个文件中写出下面这段代码并保存为something.js。<br>console.log(“Hello World”);<br>把我们刚刚创建了的保存为hello.js。然后为了运行它，我们需要使用以下命令。<br>node hello.js<br>现在打开你的文本编辑器hello.js并加入下面这段代码。你可以拷贝和粘贴但我强烈建议你亲自输入因为这是一个很好的你可以熟悉Node.js的机会。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123; response.writeHead(<span class="number">200</span>, &gt;&#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;); response.end(<span class="string">'Hello World\n'</span>); &#125;).listen(<span class="number">8080</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server started'</span>);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<pre><code class="bash">sudo yum install epel-release
+</code></pre>
+<p>现在可以使用yum命令安装Node.js了。</p>
+<pre><code class="bash">sudo yum install nodejs
+</code></pre>
+<p>因为在开发过程中我需要管理节点包，我还要安装新公共管理的软件包管理器，使用以下命令。</p>
+<pre><code class="bash">sudo yum install npm
+</code></pre>
+<p>##写我们的第一个Node.js程序。<br>在Node.js中写Hello World应用程序是很容易的！比Python简单。您需要做的就是在一个文件中写出下面这段代码并保存为something.js。</p>
+<pre><code class="javascript"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);
+</code></pre>
+<p>把我们刚刚创建了的保存为hello.js。然后为了运行它，我们需要使用以下命令。</p>
+<pre><code class="bash">node hello.js
+</code></pre>
+<p>现在打开你的文本编辑器hello.js并加入下面这段代码。你可以拷贝和粘贴但我强烈建议你亲自输入因为这是一个很好的你可以熟悉Node.js的机会。</p>
+<pre><code class="javascript"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);
+http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>{ response.writeHead(<span class="number">200</span>, &gt;{<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>}); response.end(<span class="string">'Hello World\n'</span>); }).listen(<span class="number">8080</span>);
+<span class="built_in">console</span>.log(<span class="string">'Server started'</span>);
+</code></pre>
 <p>使用下面的命令来运行应用程序。</p>
-<blockquote>
-<p>node hello.js</p>
-</blockquote>
+<pre><code class="bash">node hello.js
+</code></pre>
 <p>在浏览器访问http：/ / www.localhost：8000 /时，上面的代码，它会显示“Hello World”。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cilw5o2u80001l6pv1e25krgu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cilwa1j9e0001qlpvbtxfot7q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -246,54 +241,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#CentOS中的基本操作</p>
-<h2 id="CentOS中由一般用户切换为root用户"><a href="#CentOS中由一般用户切换为root用户" class="headerlink" title="CentOS中由一般用户切换为root用户"></a>CentOS中由一般用户切换为root用户</h2><ol>
+        <h2 id="CentOS中由一般用户切换为root用户"><a href="#CentOS中由一般用户切换为root用户" class="headerlink" title="CentOS中由一般用户切换为root用户"></a>CentOS中由一般用户切换为root用户</h2><ol>
 <li>打开终端，提示符为“$”，表明该用户为普通用户，此时，直接输su，回车，输入root密码，回车，就可以切换到root用户下，此时的提示符变为“#”。<br><code>注意，输入密码时终端是不显示的，而且每次切换为root用户都要经过这个过程。</code></li>
 <li>切换回普通用户，只要输入 “su 用户名”就OK了。</li>
 </ol>
-<p>##开启端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<h2 id="开启端口"><a href="#开启端口" class="headerlink" title="开启端口"></a>开启端口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>然后保存：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure></p>
 <p>查看打开的端口：</p>
 <pre><code class="bash">/etc/init.d/iptables status
 </code></pre>
 <p>补充说明：</p>
-<p>##关闭防火墙</p>
-<pre><code class="bash">/etc/init.d/iptables stop
+<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><pre><code class="bash">/etc/init.d/iptables stop
 service iptables stop <span class="comment"># 停止服务</span>
 </code></pre>
-<p>##查看防火墙信息</p>
-<blockquote>
-<p>/etc/init.d/iptables status</p>
-</blockquote>
-<p>##开放端口:8080</p>
-<blockquote>
-<p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
-</blockquote>
-<p>##重启防火墙以便改动生效:(或者直接重启系统)</p>
-<blockquote>
-<p>/etc/init.d/iptables restart</p>
-</blockquote>
-<p>##将更改进行保存</p>
-<blockquote>
-<p>/etc/rc.d/init.d/iptables save</p>
-</blockquote>
+<h2 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h2><pre><code class="bash">/etc/init.d/iptables status
+</code></pre>
+<h2 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h2><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+</code></pre>
+<h2 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h2><pre><code class="bash">/etc/init.d/iptables restart
+</code></pre>
+<h2 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h2><pre><code class="bash">/etc/rc.d/init.d/iptables save
+</code></pre>
 <p>另外直接在/etc/sysconfig/iptables中增加一行：</p>
-<blockquote>
-<p>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-</blockquote>
-<p>##永久关闭防火墙</p>
-<blockquote>
-<p>chkconfig –level 35 iptables off #此方法源自网络，未实验，安全考虑拒绝使用此方法</p>
-</blockquote>
+<pre><code class="bash">-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT
+</code></pre>
+<h2 id="永久关闭防火墙"><a href="#永久关闭防火墙" class="headerlink" title="永久关闭防火墙"></a>永久关闭防火墙</h2><pre><code class="bash">chkconfig –level 35 iptables off <span class="comment">#此方法源自网络，未实验，安全考虑拒绝使用此方法</span>
+</code></pre>
 <h2 id="一、配置防火墙，开启80端口、3306端口"><a href="#一、配置防火墙，开启80端口、3306端口" class="headerlink" title="一、配置防火墙，开启80端口、3306端口"></a>一、配置防火墙，开启80端口、3306端口</h2><p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。</p>
 <ol>
-<li><p>关闭firewall：</p>
-<blockquote>
-<p>systemctl stop firewalld.service #停止firewall<br>systemctl disable firewalld.service #禁止firewall开机启动</p>
-</blockquote>
+<li>关闭firewall：<pre><code class="bash">systemctl stop firewalld.service <span class="comment">#停止firewall</span>
+systemctl <span class="built_in">disable</span> firewalld.service <span class="comment">#禁止firewall开机启动</span>
+</code></pre>
 </li>
-<li><p>安装iptables防火墙</p>
-<pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
+<li>安装iptables防火墙<pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
 vi /etc/sysconfig/iptables <span class="comment">#编辑防火墙配置文件</span>
 <span class="comment"># Firewall configuration written by system-config-firewall</span>
 <span class="comment"># Manual customization of this file is not recommended.</span>
@@ -320,7 +300,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilw5o2uk0004l6pv1h599jof" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilwa1j9u0004qlpv3j9lkbiz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -358,7 +338,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="HEXO-Github-搭建博客"><a href="#HEXO-Github-搭建博客" class="headerlink" title="HEXO+Github 搭建博客"></a>HEXO+Github 搭建博客</h1><h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="安装Node（必须）"><a href="#安装Node（必须）" class="headerlink" title="安装Node（必须）"></a>安装Node（必须）</h3><p>作用：用来生成静态页面的<br>到Node.js官网下载相应平台的最新版本，一路安装即可。<br>安装Git（必须）<br>作用：把本地的hexo内容提交到github上去.<br>安装Xcode就自带有Git，我就不多说了。<br>申请GitHub（必须）<br>作用：是用来做博客的远程创库、域名、服务器之类的，怎么与本地hexo建立连接等下讲。<br>github账号我也不再啰嗦了,没有的话直接申请就行了，跟一般的注册账号差不多，SSH Keys，看你自己了，可以不配制，不配置的话以后每次对自己的博客有改动提交的时候就要手动输入账号密码，配置了就不需要了，怎么配置我就不多说了，网上有很多教程。</p>
+        <h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><h3 id="安装Node（必须）"><a href="#安装Node（必须）" class="headerlink" title="安装Node（必须）"></a>安装Node（必须）</h3><p>作用：用来生成静态页面的<br>到Node.js官网下载相应平台的最新版本，一路安装即可。<br>安装Git（必须）<br>作用：把本地的hexo内容提交到github上去.<br>安装Xcode就自带有Git，我就不多说了。<br>申请GitHub（必须）<br>作用：是用来做博客的远程创库、域名、服务器之类的，怎么与本地hexo建立连接等下讲。<br>github账号我也不再啰嗦了,没有的话直接申请就行了，跟一般的注册账号差不多，SSH Keys，看你自己了，可以不配制，不配置的话以后每次对自己的博客有改动提交的时候就要手动输入账号密码，配置了就不需要了，怎么配置我就不多说了，网上有很多教程。</p>
 <h2 id="正式安装HEXO"><a href="#正式安装HEXO" class="headerlink" title="正式安装HEXO"></a>正式安装HEXO</h2><h3 id="Node和Git都安装好后，可执行如下命令安装hexo："><a href="#Node和Git都安装好后，可执行如下命令安装hexo：" class="headerlink" title="Node和Git都安装好后，可执行如下命令安装hexo："></a>Node和Git都安装好后，可执行如下命令安装hexo：</h3><pre><code class="bash">npm install -g hexo
 </code></pre>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>然后，执行init命令初始化hexo到你指定的目录，我是直接cd到目标目录执行hexo init的。<br>命令：</p>
@@ -372,7 +352,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cilw5o2um0005l6pv9260k6j4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cilwa1ja00005qlpvuaw2nhly" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -414,7 +394,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cilw5o2us0007l6pvhofmbwx5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cilwa1ja30007qlpvzlfvcu9f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -461,7 +441,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cilw5o2uz000al6pv9n9v5m1i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cilwa1ja8000aqlpvhh7ae249" class="article-share-link">Share</a>
       
       
     </footer>
