@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/index.html">
 <meta property="og:site_name" content="Bruce">
 <meta property="og:description" content="通过Hexo创建该博客的目录">
-<meta property="og:updated_time" content="2016-03-17T05:13:48.069Z">
+<meta property="og:updated_time" content="2016-03-17T05:21:48.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO+Github 搭建博客">
 <meta name="twitter:description" content="通过Hexo创建该博客的目录">
@@ -103,23 +103,27 @@
 </code></pre>
 <hr>
 <p>补充说明：</p>
-<p>#关闭防火墙<br>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
-<p>#查看防火墙信息<br>/etc/init.d/iptables status</p>
-<p>#开放端口:8080<br>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
-<p>#重启防火墙以便改动生效:(或者直接重启系统)<br>/etc/init.d/iptables restart</p>
-<p>#将更改进行保存<br>/etc/rc.d/init.d/iptables save</p>
-<p>另外直接在/etc/sysconfig/iptables中增加一行：<br>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-<p>#永久关闭防火墙</p>
-<pre><code class="bash">chkconfig –level 35 iptables off <span class="comment">#此方法源自网络，未实验，安全考虑拒绝使用此方法</span>
-
-<span class="comment"># 一、配置防火墙，开启80端口、3306端口</span>
-CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。
-1. 关闭firewall：
-``` bash
-systemctl stop firewalld.service <span class="comment">#停止firewall</span>
+<h1 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h1><blockquote>
+<p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
+<h1 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h1><p>/etc/init.d/iptables status</p>
+</blockquote>
+<h1 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h1><blockquote>
+<p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
+<h1 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h1><p>/etc/init.d/iptables restart</p>
+<h1 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h1><p>/etc/rc.d/init.d/iptables save</p>
+</blockquote>
+<p>另外直接在/etc/sysconfig/iptables中增加一行：</p>
+<blockquote>
+<p>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
+<h1 id="永久关闭防火墙"><a href="#永久关闭防火墙" class="headerlink" title="永久关闭防火墙"></a>永久关闭防火墙</h1><pre><code class="bash">chkconfig –level 35 iptables off <span class="comment">#此方法源自网络，未实验，安全考虑拒绝使用此方法</span>
+</code></pre>
+</blockquote>
+<h1 id="一、配置防火墙，开启80端口、3306端口"><a href="#一、配置防火墙，开启80端口、3306端口" class="headerlink" title="一、配置防火墙，开启80端口、3306端口"></a>一、配置防火墙，开启80端口、3306端口</h1><p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。</p>
+<ol>
+<li>关闭firewall：<pre><code class="bash">systemctl stop firewalld.service <span class="comment">#停止firewall</span>
 systemctl <span class="built_in">disable</span> firewalld.service <span class="comment">#禁止firewall开机启动</span>
 </code></pre>
-<ol>
+</li>
 <li>安装iptables防火墙<pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
 vi /etc/sysconfig/iptables <span class="comment">#编辑防火墙配置文件</span>
 <span class="comment"># Firewall configuration written by system-config-firewall</span>
@@ -147,7 +151,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilvtndoi00042wpvthnpv7sw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilvttk0200043opvtfdk158i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
