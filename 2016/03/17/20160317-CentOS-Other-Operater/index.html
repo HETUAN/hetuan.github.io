@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HEXO+Github 搭建博客 | Bruce</title>
+  <title>CentOS 使用技巧 | Bruce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通过Hexo创建该博客的目录">
+  <meta name="description" content="CentOS 使用技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HEXO+Github 搭建博客">
+<meta property="og:title" content="CentOS 使用技巧">
 <meta property="og:url" content="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description" content="通过Hexo创建该博客的目录">
-<meta property="og:updated_time" content="2016-03-17T05:23:24.672Z">
+<meta property="og:description" content="CentOS 使用技巧">
+<meta property="og:updated_time" content="2016-03-17T09:46:46.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEXO+Github 搭建博客">
-<meta name="twitter:description" content="通过Hexo创建该博客的目录">
+<meta name="twitter:title" content="CentOS 使用技巧">
+<meta name="twitter:description" content="CentOS 使用技巧">
   
     <link rel="alternate" href="/atom.xml" title="Bruce" type="application/atom+xml">
   
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      HEXO+Github 搭建博客
+      CentOS 使用技巧
     </h1>
   
 
@@ -89,42 +89,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CentOS中由一般用户切换为root用户"><a href="#CentOS中由一般用户切换为root用户" class="headerlink" title="CentOS中由一般用户切换为root用户"></a>CentOS中由一般用户切换为root用户</h1><p><em>1.打开终端，提示符为“$”，表明该用户为普通用户，此时，直接输su，回车，输入root密码，回车，就可以切换到root用户下，此时的提示符变为“#”。<br>  注意，输入密码时终端是不显示的，而且每次切换为root用户都要经过这个过程。
-</em>2.切换回普通用户，只要输入 “su 用户名”就OK了。</p>
-<h1 id="开启端口"><a href="#开启端口" class="headerlink" title="开启端口"></a>开启端口</h1><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-/sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT
-/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
-</code></pre>
-<p>然后保存：</p>
-<pre><code class="bash">/etc/rc.d/init.d/iptables save
-</code></pre>
+        <p>#CentOS中的基本操作</p>
+<h2 id="CentOS中由一般用户切换为root用户"><a href="#CentOS中由一般用户切换为root用户" class="headerlink" title="CentOS中由一般用户切换为root用户"></a>CentOS中由一般用户切换为root用户</h2><ol>
+<li>打开终端，提示符为“$”，表明该用户为普通用户，此时，直接输su，回车，输入root密码，回车，就可以切换到root用户下，此时的提示符变为“#”。<br><code>注意，输入密码时终端是不显示的，而且每次切换为root用户都要经过这个过程。</code></li>
+<li>切换回普通用户，只要输入 “su 用户名”就OK了。</li>
+</ol>
+<p>##开启端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<p>然后保存：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure></p>
 <p>查看打开的端口：</p>
 <pre><code class="bash">/etc/init.d/iptables status
 </code></pre>
-<hr>
 <p>补充说明：</p>
-<h1 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h1><blockquote>
-<p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
-<h1 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h1><p>/etc/init.d/iptables status</p>
+<p>##关闭防火墙</p>
+<pre><code class="bash">/etc/init.d/iptables stop
+service iptables stop <span class="comment"># 停止服务</span>
+</code></pre>
+<p>##查看防火墙信息</p>
+<blockquote>
+<p>/etc/init.d/iptables status</p>
 </blockquote>
-<h1 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h1><blockquote>
+<p>##开放端口:8080</p>
+<blockquote>
 <p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
-<h1 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h1><p>/etc/init.d/iptables restart</p>
-<h1 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h1><p>/etc/rc.d/init.d/iptables save</p>
+</blockquote>
+<p>##重启防火墙以便改动生效:(或者直接重启系统)</p>
+<blockquote>
+<p>/etc/init.d/iptables restart</p>
+</blockquote>
+<p>##将更改进行保存</p>
+<blockquote>
+<p>/etc/rc.d/init.d/iptables save</p>
 </blockquote>
 <p>另外直接在/etc/sysconfig/iptables中增加一行：</p>
 <blockquote>
 <p>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-<h1 id="永久关闭防火墙"><a href="#永久关闭防火墙" class="headerlink" title="永久关闭防火墙"></a>永久关闭防火墙</h1><pre><code class="bash">chkconfig –level 35 iptables off <span class="comment">#此方法源自网络，未实验，安全考虑拒绝使用此方法</span>
-</code></pre>
 </blockquote>
-<h1 id="一、配置防火墙，开启80端口、3306端口"><a href="#一、配置防火墙，开启80端口、3306端口" class="headerlink" title="一、配置防火墙，开启80端口、3306端口"></a>一、配置防火墙，开启80端口、3306端口</h1><p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。</p>
+<p>##永久关闭防火墙</p>
+<blockquote>
+<p>chkconfig –level 35 iptables off #此方法源自网络，未实验，安全考虑拒绝使用此方法</p>
+</blockquote>
+<h2 id="一、配置防火墙，开启80端口、3306端口"><a href="#一、配置防火墙，开启80端口、3306端口" class="headerlink" title="一、配置防火墙，开启80端口、3306端口"></a>一、配置防火墙，开启80端口、3306端口</h2><p>CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。</p>
 <ol>
-<li>关闭firewall：<pre><code class="bash">systemctl stop firewalld.service <span class="comment">#停止firewall</span>
-systemctl <span class="built_in">disable</span> firewalld.service <span class="comment">#禁止firewall开机启动</span>
-</code></pre>
+<li><p>关闭firewall：</p>
+<blockquote>
+<p>systemctl stop firewalld.service #停止firewall<br>systemctl disable firewalld.service #禁止firewall开机启动</p>
+</blockquote>
 </li>
-<li>安装iptables防火墙<pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
+<li><p>安装iptables防火墙</p>
+<pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
 vi /etc/sysconfig/iptables <span class="comment">#编辑防火墙配置文件</span>
 <span class="comment"># Firewall configuration written by system-config-firewall</span>
 <span class="comment"># Manual customization of this file is not recommended.</span>
@@ -151,7 +163,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilvu1a2k00044spvs8zrg5xm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilw3ei560004cmpvzg4jpqld" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -240,7 +252,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
           </li>
         
           <li>
-            <a href="/2016/03/17/20160317-CentOS-Other-Operater/">HEXO+Github 搭建博客</a>
+            <a href="/2016/03/17/20160317-CentOS-Other-Operater/">CentOS 使用技巧</a>
           </li>
         
           <li>
