@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 生活 | Bruce</title>
+  <title>CentOS上安装Git | Bruce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bruce">
-<meta property="og:url" content="http://yoursite.com/tags/生活/index.html">
+  <meta name="description" content="CentOS上安装Git客户端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS上安装Git">
+<meta property="og:url" content="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description">
+<meta property="og:description" content="CentOS上安装Git客户端">
+<meta property="og:updated_time" content="2016-03-17T05:02:15.200Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bruce">
-<meta name="twitter:description">
+<meta name="twitter:title" content="CentOS上安装Git">
+<meta name="twitter:description" content="CentOS上安装Git客户端">
   
     <link rel="alternate" href="/atom.xml" title="Bruce" type="application/atom+xml">
   
@@ -62,39 +63,95 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/03/16/asjz/" class="archive-article-date">
-  <time datetime="2016-03-17T02:22:00.000Z" itemprop="datePublished">Mar 16</time>
+        <section id="main"><article id="post-20160317-CentOS-Install-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/17/20160317-CentOS-Install-Git/" class="article-date">
+  <time datetime="2016-03-17T16:06:00.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo创建博客/">Hexo创建博客</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/asjz/">阿氏家族</a>
+    <h1 class="article-title" itemprop="name">
+      CentOS上安装Git
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#CentOS上安装Git</p>
+<p>##确保已安装了依赖的包</p>
+<ul>
+<li>yum install curl </li>
+<li>yum install curl-devel </li>
+<li>yum install zlib-devel </li>
+<li>yum install openssl-devel </li>
+<li>yum install perl </li>
+<li>yum install cpio </li>
+<li>yum install expat-devel </li>
+<li>yum install gettext-devel<blockquote>
+<p>这样也可以<br>yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel</p>
+</blockquote>
+</li>
+</ul>
+<p>##下载最新的git包</p>
+<blockquote>
+<p>wget <a href="https://Github.com/Git/Git/archive/v2.3.0.tar.gz" target="_blank" rel="external">https://Github.com/Git/Git/archive/v2.3.0.tar.gz</a></p>
+<p>##解压<br>tar xzvf v2.3.0.tar.gz</p>
+<p>##进入目录<br>cd v2.3.0 -你的目录可能不是这个 </p>
+<p>##安装<br>autoconf<br>./configure<br>make<br>sudo make install</p>
+<p>##检查下安装的版本，大功告成<br>git –version</p>
+</blockquote>
+<p>#上面是熟练的人装逼用的</p>
+<p>#入门者请使用下面的而方法</p>
+<p>#安装Git - 使用软件包管理器<br>在CentOS安装Git的最简单的方法是使用yum包管理。以下命令将帮助您安装的Git软件。</p>
+<blockquote>
+<p>sudo yum install Git</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cilvt7v4500001fpv3ss1sytq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/17/20160317-CentOS-Other-Operater/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HEXO+Github 搭建博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/17/20160317-build-website-list/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HEXO+Github 搭建博客</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
