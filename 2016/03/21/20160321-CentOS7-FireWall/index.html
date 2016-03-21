@@ -3,29 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>阿氏家族 | Bruce</title>
+  <title>CentOS 防火墙相关 | Bruce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#这是一篇测试博客
-##成员名称：
-##成员照片：
-##家族介绍：">
+  <meta name="description" content="CentOS 防火墙相关使用技巧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿氏家族">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/asjz/index.html">
+<meta property="og:title" content="CentOS 防火墙相关">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description" content="#这是一篇测试博客
-##成员名称：
-##成员照片：
-##家族介绍：">
-<meta property="og:image" content="http://yoursite.com/../../../../images/asjz.jpg">
-<meta property="og:updated_time" content="2016-03-16T11:48:07.827Z">
+<meta property="og:description" content="CentOS 防火墙相关使用技巧">
+<meta property="og:updated_time" content="2016-03-21T13:59:14.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿氏家族">
-<meta name="twitter:description" content="#这是一篇测试博客
-##成员名称：
-##成员照片：
-##家族介绍：">
-<meta name="twitter:image" content="http://yoursite.com/../../../../images/asjz.jpg">
+<meta name="twitter:title" content="CentOS 防火墙相关">
+<meta name="twitter:description" content="CentOS 防火墙相关使用技巧">
   
     <link rel="alternate" href="/atom.xml" title="Bruce" type="application/atom+xml">
   
@@ -74,12 +63,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-asjz" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-20160321-CentOS7-FireWall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/16/asjz/" class="article-date">
-  <time datetime="2016-03-17T02:22:00.000Z" itemprop="datePublished">2016-03-16</time>
+    <a href="/2016/03/21/20160321-CentOS7-FireWall/" class="article-date">
+  <time datetime="2016-03-22T04:50:00.000Z" itemprop="datePublished">2016-03-21</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -88,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      阿氏家族
+      CentOS 防火墙相关
     </h1>
   
 
@@ -96,18 +89,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#这是一篇测试博客</p>
-<p>##成员名称：</p>
-<p>##成员照片：<br><img src="../../../../images/asjz.jpg" alt="family-photo"></p>
-<p>##家族介绍：</p>
+        <h4 id="1-安装iptables防火墙"><a href="#1-安装iptables防火墙" class="headerlink" title="1. 安装iptables防火墙"></a>1. 安装iptables防火墙</h4><pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
+</code></pre>
+<h4 id="2-启动-重启防火墙-查看防火墙状态"><a href="#2-启动-重启防火墙-查看防火墙状态" class="headerlink" title="2. 启动/重启防火墙 | 查看防火墙状态"></a>2. 启动/重启防火墙 | 查看防火墙状态</h4><pre><code class="bash">service iptables start 
+service iptables restart
+service iptables status
+</code></pre>
+<h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h4><pre><code class="bash">vi /etc/sysconfig/iptables
+
+<span class="comment"># Firewall configuration written by system-config-firewall  </span>
+<span class="comment"># Manual customization of this file is not recommended.  </span>
+*filter  
+:INPUT ACCEPT [0:0]  
+:FORWARD ACCEPT [0:0]  
+:OUTPUT ACCEPT [0:0]  
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
+-A INPUT -p icmp -j ACCEPT  
+-A INPUT -i lo -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
+-A INPUT -j REJECT --reject-with icmp-host-prohibited  
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited  
+COMMIT
+</code></pre>
+<h4 id="4-开启例外端口则，增加如下配置："><a href="#4-开启例外端口则，增加如下配置：" class="headerlink" title="4. 开启例外端口则，增加如下配置："></a>4. 开启例外端口则，增加如下配置：</h4><pre><code class="bash">vi /etc/sysconfig/iptables
+
+<span class="comment"># Firewall configuration written by system-config-firewall  </span>
+<span class="comment"># Manual customization of this file is not recommended.  </span>
+*filter  
+:INPUT ACCEPT [0:0]  
+:FORWARD ACCEPT [0:0]  
+:OUTPUT ACCEPT [0:0]  
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
+-A INPUT -p icmp -j ACCEPT  
+-A INPUT -i lo -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT  
+-A INPUT -j REJECT --reject-with icmp-host-prohibited  
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited  
+COMMIT
+</code></pre>
+<h4 id="5-关闭自动启动"><a href="#5-关闭自动启动" class="headerlink" title="5.  关闭自动启动"></a>5.  关闭自动启动</h4><pre><code class="bash">chkconfig iptables off
+</code></pre>
+<h4 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6.  查看状态"></a>6.  查看状态</h4><pre><code class="bash">chkconfig --list iptables
+netstat
+</code></pre>
+<h4 id="7-打开-关闭端口"><a href="#7-打开-关闭端口" class="headerlink" title="7. 打开/关闭端口"></a>7. 打开/关闭端口</h4><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 4000 -j ACCEPT   <span class="comment">#写入修改</span>
+/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP     <span class="comment">#写入修改</span>
+/etc/init.d/iptables save   <span class="comment">#保存修改</span>
+service iptables restart    <span class="comment">#重启防火墙，修改生效</span>
+<span class="comment"># 或者修改配置文件</span>
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cim21zpaq000emspvk3um510f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/" data-id="cim21zpan000amspvzlgijf6h" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li></ul>
 
     </footer>
   </div>
@@ -115,19 +154,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/17/20160317-build-website-list/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/21/20160321-CSharp-Operator/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          HEXO+Github 搭建博客
+          C# 操作符问号和双问号的释义
         
       </div>
     </a>
   
   
-    <a href="/2016/03/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/17/20160317-CentOS-Install-Git/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">CentOS上安装Git</div>
     </a>
   
 </nav>

@@ -64,6 +64,148 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-20160321-CSharp-Operator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/21/20160321-CSharp-Operator/" class="article-date">
+  <time datetime="2016-03-22T04:50:00.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSharp/">CSharp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/20160321-CSharp-Operator/">C# 操作符问号和双问号的释义</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1. ? 运算符"></a>1. ? 运算符</h2><pre><code class="cs">stirng name;
+name = name == <span class="keyword">null</span> ?<span class="string">"未命名"</span> : name;
+</code></pre>
+<p>上面的 <strong>?</strong> 在C#中是一个三元运算符<br>是先将 <strong>?</strong> 左边的表达之进行运算，如果结果是True那么返回 <strong>=</strong> 左侧的变量否则返回右侧的变量。  </p>
+<h2 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2. ?? 运算符"></a>2. ?? 运算符</h2><pre><code class="cs"><span class="keyword">string</span> Id;
+<span class="keyword">int</span> UserId = Id <span class="keyword">as</span> <span class="keyword">int</span> ?? <span class="number">0</span>
+</code></pre>
+<p>此处的 <strong>??</strong> 运算则是判断 <strong>??</strong> 左侧的运算结果是否为null，如果不是null 返回左侧的结果（<code>将 ?? 左侧的运算结果赋值给UserId</code>），否则返回右侧的结果</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/21/20160321-CSharp-Operator/" data-id="cim21zpai0007mspvekgukayc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSharp/">CSharp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160321-CentOS7-FireWall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/21/20160321-CentOS7-FireWall/" class="article-date">
+  <time datetime="2016-03-22T04:50:00.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/20160321-CentOS7-FireWall/">CentOS 防火墙相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-安装iptables防火墙"><a href="#1-安装iptables防火墙" class="headerlink" title="1. 安装iptables防火墙"></a>1. 安装iptables防火墙</h4><pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
+</code></pre>
+<h4 id="2-启动-重启防火墙-查看防火墙状态"><a href="#2-启动-重启防火墙-查看防火墙状态" class="headerlink" title="2. 启动/重启防火墙 | 查看防火墙状态"></a>2. 启动/重启防火墙 | 查看防火墙状态</h4><pre><code class="bash">service iptables start 
+service iptables restart
+service iptables status
+</code></pre>
+<h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h4><pre><code class="bash">vi /etc/sysconfig/iptables
+
+<span class="comment"># Firewall configuration written by system-config-firewall  </span>
+<span class="comment"># Manual customization of this file is not recommended.  </span>
+*filter  
+:INPUT ACCEPT [0:0]  
+:FORWARD ACCEPT [0:0]  
+:OUTPUT ACCEPT [0:0]  
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
+-A INPUT -p icmp -j ACCEPT  
+-A INPUT -i lo -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
+-A INPUT -j REJECT --reject-with icmp-host-prohibited  
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited  
+COMMIT
+</code></pre>
+<h4 id="4-开启例外端口则，增加如下配置："><a href="#4-开启例外端口则，增加如下配置：" class="headerlink" title="4. 开启例外端口则，增加如下配置："></a>4. 开启例外端口则，增加如下配置：</h4><pre><code class="bash">vi /etc/sysconfig/iptables
+
+<span class="comment"># Firewall configuration written by system-config-firewall  </span>
+<span class="comment"># Manual customization of this file is not recommended.  </span>
+*filter  
+:INPUT ACCEPT [0:0]  
+:FORWARD ACCEPT [0:0]  
+:OUTPUT ACCEPT [0:0]  
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
+-A INPUT -p icmp -j ACCEPT  
+-A INPUT -i lo -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT  
+-A INPUT -j REJECT --reject-with icmp-host-prohibited  
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited  
+COMMIT
+</code></pre>
+<h4 id="5-关闭自动启动"><a href="#5-关闭自动启动" class="headerlink" title="5.  关闭自动启动"></a>5.  关闭自动启动</h4><pre><code class="bash">chkconfig iptables off
+</code></pre>
+<h4 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6.  查看状态"></a>6.  查看状态</h4><pre><code class="bash">chkconfig --list iptables
+netstat
+</code></pre>
+<h4 id="7-打开-关闭端口"><a href="#7-打开-关闭端口" class="headerlink" title="7. 打开/关闭端口"></a>7. 打开/关闭端口</h4><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 4000 -j ACCEPT   <span class="comment">#写入修改</span>
+/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP     <span class="comment">#写入修改</span>
+/etc/init.d/iptables save   <span class="comment">#保存修改</span>
+service iptables restart    <span class="comment">#重启防火墙，修改生效</span>
+<span class="comment"># 或者修改配置文件</span>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/" data-id="cim21zpan000amspvzlgijf6h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-20160317-CentOS-Install-Git" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/17/20160317-CentOS-Install-Git/" class="article-date">
@@ -112,7 +254,7 @@ sudo make install
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cilwbmf0o0000zdpvvevam8hl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cim21zp9r0000mspvlki0w0if" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -203,7 +345,7 @@ http.createServer(<span class="function"><span class="keyword">function</span> (
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cilwbmf0y0001zdpvnqf1tw6x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cim21zpa20001mspvx8p3m1hm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -300,7 +442,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cilwbmf1b0004zdpv95ukt57f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cim21zpab0004mspv9p90lokk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -359,7 +501,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cilwbmf1d0005zdpvmf35977j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cim21zpag0005mspv6cp4luby" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -401,7 +543,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cilwbmf1g0007zdpv42gzju3e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cim21zpaq000emspvk3um510f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -448,7 +590,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cilwbmf1m000azdpvp2g0t2qj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cim21zpav000imspvleedr96f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -467,7 +609,7 @@ cnpm install hexo-cli -g
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo创建博客/">Hexo创建博客</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSharp/">CSharp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CentOS/">CentOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo创建博客/">Hexo创建博客</a></li></ul>
     </div>
   </div>
 
@@ -477,7 +619,7 @@ cnpm install hexo-cli -g
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSharp/">CSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li></ul>
     </div>
   </div>
 
@@ -487,7 +629,7 @@ cnpm install hexo-cli -g
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+      <a href="/tags/CSharp/" style="font-size: 10px;">CSharp</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     </div>
   </div>
 
@@ -509,6 +651,14 @@ cnpm install hexo-cli -g
       <ul>
         
           <li>
+            <a href="/2016/03/21/20160321-CSharp-Operator/">C# 操作符问号和双问号的释义</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/21/20160321-CentOS7-FireWall/">CentOS 防火墙相关</a>
+          </li>
+        
+          <li>
             <a href="/2016/03/17/20160317-CentOS-Install-Git/">CentOS上安装Git</a>
           </li>
         
@@ -518,14 +668,6 @@ cnpm install hexo-cli -g
         
           <li>
             <a href="/2016/03/17/20160317-CentOS-Other-Operater/">CentOS 使用技巧</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/17/20160317-build-website-list/">HEXO+Github 搭建博客</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/16/asjz/">阿氏家族</a>
           </li>
         
       </ul>
