@@ -64,6 +64,78 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-20160322-CSharp-xiangdengxinghetongyixing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/" class="article-date">
+  <time datetime="2016-03-23T03:50:00.000Z" itemprop="datePublished">2016-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSharp/">CSharp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/">C# 对象的相等性与同一性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在C# 中两个对象进行比较时，无论是值类型之间的比较还是引用类型之间的比较，基本上都是用的 <em> == </em> 这个运算符进行运算，但是这种运算比较的仅仅是两个对象的指针是否相等而不会去比较对象中的每一个属性，当然两个变量的引用地址相同两者自然相等，但是如果两者的引用地址不同但是所有的属性值都相等这两者是否是相等的呢？所以，对于前者我们叫做 <em> 同一 </em> （同一性），而后者中的无论地址是否行等，只要对象中的属性都相等那么这叫做 <em> 相等 </em>（相等行）。<br>在C#的Object这个基类中微软给我们封装了几个默认的虚方法，比如有Equals() 方法。用来比较两者是否相等，其实现方式如下：</p>
+<pre><code class="cs"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Object</span>
+{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> Boolean <span class="title">Equals</span>(<span class="params">Object obj</span>)
+    </span>{
+        <span class="comment">// 如果两个引用指向同一个值，他们肯定包含相同的值</span>
+        <span class="keyword">if</span>(<span class="keyword">this</span> == obj) <span class="keyword">return</span> <span class="keyword">true</span>;
+
+        <span class="comment">//假定对象不包含相同的值</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+}
+</code></pre>
+<p>在int,  string,float 等值类型中Equal会进行所包含的值的比较而不仅仅是比较引用是因为在值类型中 ValueType 继承了 Object 类型，而且重写了Object 类型中的Equals() 方法。</p>
+<p>所以我们在定义对象并且要使用Equals时可以根据不同的需求进行方法的重写，重写后如果想进行同一性的比较我们可以使用Object类中提供的静态方法ReferenceEquals()进行比较其原型如下。</p>
+<pre><code class="cs"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Object</span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">ReferenceEquals</span>(<span class="params">Object objA, Object objB</span>)
+    </span>{
+        <span class="keyword">return</span> (ojbA == objB);
+    }
+}
+</code></pre>
+<p>在重写Equals() 方法时我们可以参考以下过程：</p>
+<ol>
+<li>如果obj的参数为null就返回false，因为调用非静态的Euqlas() 方法时this所标志的当前变量显然不为null。</li>
+<li>如果this和obj实参引用同一个对象就返回true。</li>
+<li>如果this和obj引用不同 <em> 类型 </em> 的对象就返回false，一个string对象显然不等于FileStream。</li>
+<li>将类型中的每一个实例字段将this对象中的值与obj中的值进行比较（可以使用反射机制，反正在值类型的Equals() 方法重写中使用的是反射）任何字段不想等就返回false。</li>
+<li>除了字段之外还有本类的基类之间的比较，此时要使用基类中的Equals方法，如果基类的Equals()返回false就返回false否则返回true。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/" data-id="cim3ey19e0005fkpvxsjbggaz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSharp/">CSharp</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-20160321-CSharp-Operator" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/21/20160321-CSharp-Operator/" class="article-date">
@@ -102,7 +174,7 @@ name = name == <span class="keyword">null</span> ?<span class="string">"未命�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/21/20160321-CSharp-Operator/" data-id="cim22i5v20005tfpvtoloftwk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/21/20160321-CSharp-Operator/" data-id="cim3ey19h0007fkpvls8zj0zf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSharp/">CSharp</a></li></ul>
@@ -194,70 +266,10 @@ service iptables restart    <span class="comment">#重启防火墙，修改生�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/" data-id="cim22i5v50007tfpvjnttd7ri" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/" data-id="cim3ey19l000afkpv2va4r5jp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-20160317-CentOS-Install-Git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/17/20160317-CentOS-Install-Git/" class="article-date">
-  <time datetime="2016-03-17T20:06:00.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo创建博客/">Hexo创建博客</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/20160317-CentOS-Install-Git/">CentOS上安装Git</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="确保已安装了依赖的包"><a href="#确保已安装了依赖的包" class="headerlink" title="确保已安装了依赖的包"></a>确保已安装了依赖的包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install curl </span><br><span class="line">yum install curl-devel </span><br><span class="line">yum install zlib-devel </span><br><span class="line">yum install openssl-devel </span><br><span class="line">yum install perl </span><br><span class="line">yum install cpio </span><br><span class="line">yum install expat-devel </span><br><span class="line">yum install gettext-devel</span><br></pre></td></tr></table></figure>
-<p>这样也可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel</span><br></pre></td></tr></table></figure></p>
-<h2 id="下载最新的git包"><a href="#下载最新的git包" class="headerlink" title="下载最新的git包"></a>下载最新的git包</h2><pre><code class="bash">wget https://Github.com/Git/Git/archive/v2.3.0.tar.gz
-</code></pre>
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><pre><code class="bash">tar xzvf v2.3.0.tar.gz
-</code></pre>
-<h2 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h2><pre><code class="bash"><span class="built_in">cd</span> v2.3.0 -你的目录可能不是这个
-</code></pre>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code class="bash">autoconf 
-./configure 
-make 
-sudo make install
-</code></pre>
-<h2 id="检查下安装的版本，大功告成"><a href="#检查下安装的版本，大功告成" class="headerlink" title="检查下安装的版本，大功告成"></a>检查下安装的版本，大功告成</h2><pre><code class="bash">git --version
-</code></pre>
-<h3 id="上面是熟练的人装逼用的"><a href="#上面是熟练的人装逼用的" class="headerlink" title="上面是熟练的人装逼用的"></a>上面是熟练的人装逼用的</h3><h3 id="入门者请使用下面的而方法"><a href="#入门者请使用下面的而方法" class="headerlink" title="入门者请使用下面的而方法"></a>入门者请使用下面的而方法</h3><h3 id="安装Git-使用软件包管理器"><a href="#安装Git-使用软件包管理器" class="headerlink" title="安装Git - 使用软件包管理器"></a>安装Git - 使用软件包管理器</h3><p>在CentOS安装Git的最简单的方法是使用yum包管理。以下命令将帮助您安装的Git软件。</p>
-<pre><code class="bash">sudo yum install Git
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cim22i5u10000tfpve6zpuhtk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -345,7 +357,67 @@ http.createServer(<span class="function"><span class="keyword">function</span> (
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cim22i5ug0001tfpvw9jbg011" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Nodejs/" data-id="cim3ey18u0001fkpv1brnhdna" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20160317-CentOS-Install-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/17/20160317-CentOS-Install-Git/" class="article-date">
+  <time datetime="2016-03-17T20:06:00.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo创建博客/">Hexo创建博客</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/20160317-CentOS-Install-Git/">CentOS上安装Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="确保已安装了依赖的包"><a href="#确保已安装了依赖的包" class="headerlink" title="确保已安装了依赖的包"></a>确保已安装了依赖的包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install curl </span><br><span class="line">yum install curl-devel </span><br><span class="line">yum install zlib-devel </span><br><span class="line">yum install openssl-devel </span><br><span class="line">yum install perl </span><br><span class="line">yum install cpio </span><br><span class="line">yum install expat-devel </span><br><span class="line">yum install gettext-devel</span><br></pre></td></tr></table></figure>
+<p>这样也可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel</span><br></pre></td></tr></table></figure></p>
+<h2 id="下载最新的git包"><a href="#下载最新的git包" class="headerlink" title="下载最新的git包"></a>下载最新的git包</h2><pre><code class="bash">wget https://Github.com/Git/Git/archive/v2.3.0.tar.gz
+</code></pre>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><pre><code class="bash">tar xzvf v2.3.0.tar.gz
+</code></pre>
+<h2 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h2><pre><code class="bash"><span class="built_in">cd</span> v2.3.0 -你的目录可能不是这个
+</code></pre>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code class="bash">autoconf 
+./configure 
+make 
+sudo make install
+</code></pre>
+<h2 id="检查下安装的版本，大功告成"><a href="#检查下安装的版本，大功告成" class="headerlink" title="检查下安装的版本，大功告成"></a>检查下安装的版本，大功告成</h2><pre><code class="bash">git --version
+</code></pre>
+<h3 id="上面是熟练的人装逼用的"><a href="#上面是熟练的人装逼用的" class="headerlink" title="上面是熟练的人装逼用的"></a>上面是熟练的人装逼用的</h3><h3 id="入门者请使用下面的而方法"><a href="#入门者请使用下面的而方法" class="headerlink" title="入门者请使用下面的而方法"></a>入门者请使用下面的而方法</h3><h3 id="安装Git-使用软件包管理器"><a href="#安装Git-使用软件包管理器" class="headerlink" title="安装Git - 使用软件包管理器"></a>安装Git - 使用软件包管理器</h3><p>在CentOS安装Git的最简单的方法是使用yum包管理。以下命令将帮助您安装的Git软件。</p>
+<pre><code class="bash">sudo yum install Git
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Install-Git/" data-id="cim3ey1970004fkpvg10pjdo7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -442,7 +514,7 @@ systemctl <span class="built_in">enable</span> iptables.service <span class="com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cim22j24o0000topvk3e0zhl9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-CentOS-Other-Operater/" data-id="cim3ey1as000jfkpvgcjgqmmj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -501,7 +573,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cim22i5uy0004tfpvcu9ezrpr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/17/20160317-build-website-list/" data-id="cim3ey18i0000fkpv22u9a5y5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -543,7 +615,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cim22i5v9000atfpvjdzvq0hb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/asjz/" data-id="cim3ey19v000dfkpv3wcegpct" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -590,7 +662,7 @@ cnpm install hexo-cli -g
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cim22i5ve000dtfpvunxy4ok6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/16/hello-world/" data-id="cim3ey1ap000gfkpvn812vmq4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -629,7 +701,7 @@ cnpm install hexo-cli -g
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSharp/" style="font-size: 10px;">CSharp</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+      <a href="/tags/CSharp/" style="font-size: 15px;">CSharp</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     </div>
   </div>
 
@@ -651,6 +723,10 @@ cnpm install hexo-cli -g
       <ul>
         
           <li>
+            <a href="/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/">C# 对象的相等性与同一性</a>
+          </li>
+        
+          <li>
             <a href="/2016/03/21/20160321-CSharp-Operator/">C# 操作符问号和双问号的释义</a>
           </li>
         
@@ -659,15 +735,11 @@ cnpm install hexo-cli -g
           </li>
         
           <li>
-            <a href="/2016/03/17/20160317-CentOS-Install-Git/">CentOS上安装Git</a>
-          </li>
-        
-          <li>
             <a href="/2016/03/17/20160317-CentOS-Install-Nodejs/">在CentOS 7安装Node.js</a>
           </li>
         
           <li>
-            <a href="/2016/03/17/20160317-CentOS-Other-Operater/">CentOS 使用技巧</a>
+            <a href="/2016/03/17/20160317-CentOS-Install-Git/">CentOS上安装Git</a>
           </li>
         
       </ul>

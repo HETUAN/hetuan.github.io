@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CentOS 防火墙相关 | Bruce</title>
+  <title>C# 对象的相等性与同一性 | Bruce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CentOS 防火墙相关使用技巧">
+  <meta name="description" content="CSharp 对象之间比较时的相等性与同一性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 防火墙相关">
-<meta property="og:url" content="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/index.html">
+<meta property="og:title" content="C# 对象的相等性与同一性">
+<meta property="og:url" content="http://yoursite.com/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description" content="CentOS 防火墙相关使用技巧">
-<meta property="og:updated_time" content="2016-03-21T13:59:14.517Z">
+<meta property="og:description" content="CSharp 对象之间比较时的相等性与同一性">
+<meta property="og:updated_time" content="2016-03-22T12:44:14.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 防火墙相关">
-<meta name="twitter:description" content="CentOS 防火墙相关使用技巧">
+<meta name="twitter:title" content="C# 对象的相等性与同一性">
+<meta name="twitter:description" content="CSharp 对象之间比较时的相等性与同一性">
   
     <link rel="alternate" href="/atom.xml" title="Bruce" type="application/atom+xml">
   
@@ -63,14 +63,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-20160321-CentOS7-FireWall" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-20160322-CSharp-xiangdengxinghetongyixing" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/21/20160321-CentOS7-FireWall/" class="article-date">
-  <time datetime="2016-03-22T04:50:00.000Z" itemprop="datePublished">2016-03-21</time>
+    <a href="/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/" class="article-date">
+  <time datetime="2016-03-23T03:50:00.000Z" itemprop="datePublished">2016-03-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/CentOS/">CentOS</a>
+    <a class="article-category-link" href="/categories/CSharp/">CSharp</a>
   </div>
 
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CentOS 防火墙相关
+      C# 对象的相等性与同一性
     </h1>
   
 
@@ -89,64 +89,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-安装iptables防火墙"><a href="#1-安装iptables防火墙" class="headerlink" title="1. 安装iptables防火墙"></a>1. 安装iptables防火墙</h4><pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
-</code></pre>
-<h4 id="2-启动-重启防火墙-查看防火墙状态"><a href="#2-启动-重启防火墙-查看防火墙状态" class="headerlink" title="2. 启动/重启防火墙 | 查看防火墙状态"></a>2. 启动/重启防火墙 | 查看防火墙状态</h4><pre><code class="bash">service iptables start 
-service iptables restart
-service iptables status
-</code></pre>
-<h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h4><pre><code class="bash">vi /etc/sysconfig/iptables
+        <p>在C# 中两个对象进行比较时，无论是值类型之间的比较还是引用类型之间的比较，基本上都是用的 <em> == </em> 这个运算符进行运算，但是这种运算比较的仅仅是两个对象的指针是否相等而不会去比较对象中的每一个属性，当然两个变量的引用地址相同两者自然相等，但是如果两者的引用地址不同但是所有的属性值都相等这两者是否是相等的呢？所以，对于前者我们叫做 <em> 同一 </em> （同一性），而后者中的无论地址是否行等，只要对象中的属性都相等那么这叫做 <em> 相等 </em>（相等行）。<br>在C#的Object这个基类中微软给我们封装了几个默认的虚方法，比如有Equals() 方法。用来比较两者是否相等，其实现方式如下：</p>
+<pre><code class="cs"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Object</span>
+{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> Boolean <span class="title">Equals</span>(<span class="params">Object obj</span>)
+    </span>{
+        <span class="comment">// 如果两个引用指向同一个值，他们肯定包含相同的值</span>
+        <span class="keyword">if</span>(<span class="keyword">this</span> == obj) <span class="keyword">return</span> <span class="keyword">true</span>;
 
-<span class="comment"># Firewall configuration written by system-config-firewall  </span>
-<span class="comment"># Manual customization of this file is not recommended.  </span>
-*filter  
-:INPUT ACCEPT [0:0]  
-:FORWARD ACCEPT [0:0]  
-:OUTPUT ACCEPT [0:0]  
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
--A INPUT -p icmp -j ACCEPT  
--A INPUT -i lo -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
--A INPUT -j REJECT --reject-with icmp-host-prohibited  
--A FORWARD -j REJECT --reject-with icmp-host-prohibited  
-COMMIT
+        <span class="comment">//假定对象不包含相同的值</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+}
 </code></pre>
-<h4 id="4-开启例外端口则，增加如下配置："><a href="#4-开启例外端口则，增加如下配置：" class="headerlink" title="4. 开启例外端口则，增加如下配置："></a>4. 开启例外端口则，增加如下配置：</h4><pre><code class="bash">vi /etc/sysconfig/iptables
-
-<span class="comment"># Firewall configuration written by system-config-firewall  </span>
-<span class="comment"># Manual customization of this file is not recommended.  </span>
-*filter  
-:INPUT ACCEPT [0:0]  
-:FORWARD ACCEPT [0:0]  
-:OUTPUT ACCEPT [0:0]  
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
--A INPUT -p icmp -j ACCEPT  
--A INPUT -i lo -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT  
--A INPUT -j REJECT --reject-with icmp-host-prohibited  
--A FORWARD -j REJECT --reject-with icmp-host-prohibited  
-COMMIT
+<p>在int,  string,float 等值类型中Equal会进行所包含的值的比较而不仅仅是比较引用是因为在值类型中 ValueType 继承了 Object 类型，而且重写了Object 类型中的Equals() 方法。</p>
+<p>所以我们在定义对象并且要使用Equals时可以根据不同的需求进行方法的重写，重写后如果想进行同一性的比较我们可以使用Object类中提供的静态方法ReferenceEquals()进行比较其原型如下。</p>
+<pre><code class="cs"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Object</span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">ReferenceEquals</span>(<span class="params">Object objA, Object objB</span>)
+    </span>{
+        <span class="keyword">return</span> (ojbA == objB);
+    }
+}
 </code></pre>
-<h4 id="5-关闭自动启动"><a href="#5-关闭自动启动" class="headerlink" title="5.  关闭自动启动"></a>5.  关闭自动启动</h4><pre><code class="bash">chkconfig iptables off
-</code></pre>
-<h4 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6.  查看状态"></a>6.  查看状态</h4><pre><code class="bash">chkconfig --list iptables
-netstat
-</code></pre>
-<h4 id="7-打开-关闭端口"><a href="#7-打开-关闭端口" class="headerlink" title="7. 打开/关闭端口"></a>7. 打开/关闭端口</h4><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 4000 -j ACCEPT   <span class="comment">#写入修改</span>
-/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP     <span class="comment">#写入修改</span>
-/etc/init.d/iptables save   <span class="comment">#保存修改</span>
-service iptables restart    <span class="comment">#重启防火墙，修改生效</span>
-<span class="comment"># 或者修改配置文件</span>
-</code></pre>
+<p>在重写Equals() 方法时我们可以参考以下过程：</p>
+<ol>
+<li>如果obj的参数为null就返回false，因为调用非静态的Euqlas() 方法时this所标志的当前变量显然不为null。</li>
+<li>如果this和obj实参引用同一个对象就返回true。</li>
+<li>如果this和obj引用不同 <em> 类型 </em> 的对象就返回false，一个string对象显然不等于FileStream。</li>
+<li>将类型中的每一个实例字段将this对象中的值与obj中的值进行比较（可以使用反射机制，反正在值类型的Equals() 方法重写中使用的是反射）任何字段不想等就返回false。</li>
+<li>除了字段之外还有本类的基类之间的比较，此时要使用基类中的Equals方法，如果基类的Equals()返回false就返回false否则返回true。</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/" data-id="cim3ey19l000afkpv2va4r5jp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/" data-id="cim3ey19e0005fkpvxsjbggaz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSharp/">CSharp</a></li></ul>
 
     </footer>
   </div>
@@ -154,19 +134,10 @@ service iptables restart    <span class="comment">#重启防火墙，修改生�
     
 <nav id="article-nav">
   
-    <a href="/2016/03/21/20160321-CSharp-Operator/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          C# 操作符问号和双问号的释义
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/17/20160317-CentOS-Install-Nodejs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/21/20160321-CSharp-Operator/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">在CentOS 7安装Node.js</div>
+      <div class="article-nav-title">C# 操作符问号和双问号的释义</div>
     </a>
   
 </nav>
