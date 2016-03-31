@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CentOS," />
+  <meta name="keywords" content="CSharp," />
 
 
 
@@ -57,16 +57,21 @@
 
 
 
-<meta name="description" content="CentOS 防火墙相关使用技巧">
+<meta name="description" content="tfs 查找自己的所有更改">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 防火墙相关">
-<meta property="og:url" content="http://yoursite.com/2016/03/21/20160321-CentOS7-FireWall/index.html">
+<meta property="og:title" content="tfs 查找自己的所有更改">
+<meta property="og:url" content="http://yoursite.com/2016/03/17/20160331-TFSfindchange/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description" content="CentOS 防火墙相关使用技巧">
-<meta property="og:updated_time" content="2016-03-21T13:59:14.517Z">
+<meta property="og:description" content="tfs 查找自己的所有更改">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160331-TFSfindchange/img1.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160331-TFSfindchange/img2.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160331-TFSfindchange/img3.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160331-TFSfindchange/img4.png">
+<meta property="og:updated_time" content="2016-03-31T14:03:33.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 防火墙相关">
-<meta name="twitter:description" content="CentOS 防火墙相关使用技巧">
+<meta name="twitter:title" content="tfs 查找自己的所有更改">
+<meta name="twitter:description" content="tfs 查找自己的所有更改">
+<meta name="twitter:image" content="http://yoursite.com/../../../../images/20160331-TFSfindchange/img1.png">
 
 
 
@@ -84,7 +89,7 @@
   };
 </script>
 
-  <title> CentOS 防火墙相关 | Bruce </title>
+  <title> tfs 查找自己的所有更改 | Bruce </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -194,7 +199,7 @@
             
             
               
-                CentOS 防火墙相关
+                tfs 查找自己的所有更改
               
             
           </h1>
@@ -206,8 +211,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T21:50:00-07:00" content="2016-03-21">
-              2016-03-21
+            <time itemprop="dateCreated" datetime="2016-03-17T13:06:00-07:00" content="2016-03-17">
+              2016-03-17
             </time>
           </span>
 
@@ -220,8 +225,8 @@
               <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CentOS/" itemprop="url" rel="index">
-                    <span itemprop="name">CentOS</span>
+                  <a href="/categories/CSharp/" itemprop="url" rel="index">
+                    <span itemprop="name">CSharp</span>
                   </a>
                 </span>
 
@@ -252,56 +257,15 @@
       
 
       
-        <h4 id="1-安装iptables防火墙"><a href="#1-安装iptables防火墙" class="headerlink" title="1. 安装iptables防火墙"></a>1. 安装iptables防火墙</h4><pre><code class="bash">yum install iptables-services <span class="comment">#安装</span>
-</code></pre>
-<h4 id="2-启动-重启防火墙-查看防火墙状态"><a href="#2-启动-重启防火墙-查看防火墙状态" class="headerlink" title="2. 启动/重启防火墙 | 查看防火墙状态"></a>2. 启动/重启防火墙 | 查看防火墙状态</h4><pre><code class="bash">service iptables start 
-service iptables restart
-service iptables status
-</code></pre>
-<h4 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h4><pre><code class="bash">vi /etc/sysconfig/iptables
-
-<span class="comment"># Firewall configuration written by system-config-firewall  </span>
-<span class="comment"># Manual customization of this file is not recommended.  </span>
-*filter  
-:INPUT ACCEPT [0:0]  
-:FORWARD ACCEPT [0:0]  
-:OUTPUT ACCEPT [0:0]  
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
--A INPUT -p icmp -j ACCEPT  
--A INPUT -i lo -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
--A INPUT -j REJECT --reject-with icmp-host-prohibited  
--A FORWARD -j REJECT --reject-with icmp-host-prohibited  
-COMMIT
-</code></pre>
-<h4 id="4-开启例外端口则，增加如下配置："><a href="#4-开启例外端口则，增加如下配置：" class="headerlink" title="4. 开启例外端口则，增加如下配置："></a>4. 开启例外端口则，增加如下配置：</h4><pre><code class="bash">vi /etc/sysconfig/iptables
-
-<span class="comment"># Firewall configuration written by system-config-firewall  </span>
-<span class="comment"># Manual customization of this file is not recommended.  </span>
-*filter  
-:INPUT ACCEPT [0:0]  
-:FORWARD ACCEPT [0:0]  
-:OUTPUT ACCEPT [0:0]  
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  
--A INPUT -p icmp -j ACCEPT  
--A INPUT -i lo -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT  
--A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT  
--A INPUT -j REJECT --reject-with icmp-host-prohibited  
--A FORWARD -j REJECT --reject-with icmp-host-prohibited  
-COMMIT
-</code></pre>
-<h4 id="5-关闭自动启动"><a href="#5-关闭自动启动" class="headerlink" title="5.  关闭自动启动"></a>5.  关闭自动启动</h4><pre><code class="bash">chkconfig iptables off
-</code></pre>
-<h4 id="6-查看状态"><a href="#6-查看状态" class="headerlink" title="6.  查看状态"></a>6.  查看状态</h4><pre><code class="bash">chkconfig --list iptables
-netstat
-</code></pre>
-<h4 id="7-打开-关闭端口"><a href="#7-打开-关闭端口" class="headerlink" title="7. 打开/关闭端口"></a>7. 打开/关闭端口</h4><pre><code class="bash">/sbin/iptables -I INPUT -p tcp --dport 4000 -j ACCEPT   <span class="comment">#写入修改</span>
-/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP     <span class="comment">#写入修改</span>
-/etc/init.d/iptables save   <span class="comment">#保存修改</span>
-service iptables restart    <span class="comment">#重启防火墙，修改生效</span>
-<span class="comment"># 或者修改配置文件</span>
-</code></pre>
+        <h2 id="tfs-查找自己的所有更改"><a href="#tfs-查找自己的所有更改" class="headerlink" title="tfs 查找自己的所有更改"></a>tfs 查找自己的所有更改</h2><ol>
+<li><p>找到团队资源管理器Tab页面，点击源代码管理器然后就会打开源代码管理器的Tab页面。<br><img src="../../../../images/20160331-TFSfindchange/img1.png" alt=""></p>
+</li>
+<li><p>让新打开的Tab获取焦点，然后按Ctrl+G 出现下面的界面<br><img src="../../../../images/20160331-TFSfindchange/img2.png" alt=""></p>
+</li>
+<li>点击查找 出现下面的界面<br><img src="../../../../images/20160331-TFSfindchange/img3.png" alt=""></li>
+<li>输入自己的查询条件就可以显示自己的更改。<br><img src="../../../../images/20160331-TFSfindchange/img4.png" alt=""></li>
+</ol>
+<p><a href="https://msdn.microsoft.com/zh-cn/library/ms181408.aspx" target="_blank" rel="external">参考地址（点击）</a></p>
 
       
     </div>
@@ -316,7 +280,7 @@ service iptables restart    <span class="comment">#重启防火墙，修改生�
       
         <div class="post-tags">
           
-            <a href="/tags/CentOS/" rel="tag">#CentOS</a>
+            <a href="/tags/CSharp/" rel="tag">#CSharp</a>
           
         </div>
       
@@ -325,16 +289,16 @@ service iptables restart    <span class="comment">#重启防火墙，修改生�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/17/20160331-TFSfindchange/" rel="next" title="tfs 查找自己的所有更改">
-                <i class="fa fa-chevron-left"></i> tfs 查找自己的所有更改
+              <a href="/2016/03/17/20160331-Code-Review/" rel="next" title="Code Review">
+                <i class="fa fa-chevron-left"></i> Code Review
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/21/20160317-MSMQxiaoxiduilie-md/" rel="prev" title="MSMQ消息队列">
-                MSMQ消息队列 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/21/20160321-CentOS7-FireWall/" rel="prev" title="CentOS 防火墙相关">
+                CentOS 防火墙相关 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -454,7 +418,7 @@ service iptables restart    <span class="comment">#重启防火墙，修改生�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装iptables防火墙"><span class="nav-number">1.</span> <span class="nav-text">1. 安装iptables防火墙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-启动-重启防火墙-查看防火墙状态"><span class="nav-number">2.</span> <span class="nav-text">2. 启动/重启防火墙 | 查看防火墙状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-修改配置文件"><span class="nav-number">3.</span> <span class="nav-text">3. 修改配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-开启例外端口则，增加如下配置："><span class="nav-number">4.</span> <span class="nav-text">4. 开启例外端口则，增加如下配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-关闭自动启动"><span class="nav-number">5.</span> <span class="nav-text">5.  关闭自动启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-查看状态"><span class="nav-number">6.</span> <span class="nav-text">6.  查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-打开-关闭端口"><span class="nav-number">7.</span> <span class="nav-text">7. 打开/关闭端口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tfs-查找自己的所有更改"><span class="nav-number">1.</span> <span class="nav-text">tfs 查找自己的所有更改</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -1,0 +1,731 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSharp," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="MSMQ消息队列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MSMQ消息队列">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/20160317-MSMQxiaoxiduilie-md/index.html">
+<meta property="og:site_name" content="Bruce">
+<meta property="og:description" content="MSMQ消息队列">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/yuanli.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/install.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/show.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/run.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/result1.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/result2.png">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/result2.png">
+<meta property="og:updated_time" content="2016-03-31T14:10:33.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MSMQ消息队列">
+<meta name="twitter:description" content="MSMQ消息队列">
+<meta name="twitter:image" content="http://yoursite.com/../../../../images/20160317-MSMQxiaoxiduilie-md/yuanli.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> MSMQ消息队列 | Bruce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Bruce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MSMQ消息队列
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-03-21T21:50:00-07:00" content="2016-03-21">
+              2016-03-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSharp/" itemprop="url" rel="index">
+                    <span itemprop="name">CSharp</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h3><p>　　Windows Communication Foundation(WCF)是Microsoft为构建面向服务的应用程序而提供的统一编程模型，该服务模型提供了支持松散耦合和版本管理的序列化功能，并提供了与消息队列（MSMQ）、COM+、Asp.net Web服务、.NET Remoting等微软现有的分布式系统技术。利用WCF平台，开发人员可以很方便地构建面向服务的应用程序（SOA）。可以认为，WCF是对之前现有的分布式技术（指的是MSMQ、.NET Remoting和Web 服务等技术）的集成和扩展，既然这样，我们就有必要首先了解下之前分布式技术，只有这样才能更深刻地明白WCF所带来的好处。</p>
+<h3 id="2-简介"><a href="#2-简介" class="headerlink" title="2. 简介"></a>2. 简介</h3><p>MSMQ全称是Microsoft Message Queue——微软消息队列。它是一种异步传输模式，可以在不同的应用之间实现相互通信，相互通信的应用可以分布在同一台机器上，也可以分布于相连的网络空间中的任一位置。</p>
+<h4 id="2-1-工作原理"><a href="#2-1-工作原理" class="headerlink" title="2.1 工作原理"></a>2.1 工作原理</h4><p>　MSMQ的实现原理是：消息的发送者把自己想要发送的信息放入一个容器，然后把它保存到一个系统公用空间的消息队列中，本地或异地的消息接收程序再从该队列中取出发给它的消息进行处理。<br>　　消息队列是一个公用存储空间，它可以存在于内存中或物理文件中，因此，消息以两种方式发送，即快递方式和可恢复模式。它们的区别是消息存储位置的不同，快递方式，为了消息的快速传递，所以把消息放置在内存中，而不放在物理磁盘上，以获得较高的处理能力；而可恢复模式在传送过程的每一步骤中，都把消息写入物理磁盘上，这样当保存消息队列的机器发生故障而重新启动后，可以把发送的消息恢复到故障发送之前的状态，以获得更好的消息恢复能力。消息队列可以放在发送方、接收方所在的机器上，也可以单独放置在另外一台机器上。另外，采用消息队列机制，发送方不必要担心接收方是否启动，是否发生故障等因素，只要消息成功发送出去，就可以认为处理完成，而实际上对方可能甚至未开机，或者实际消息传递到对方可能在第二天。MSMQ机制类似QQ消息传递机制。下图演示了MSMQ的实现原理</p>
+<p><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/yuanli.png" alt="原理"></p>
+<p><strong> MSMQ中主要有两个概念。</strong></p>
+<ul>
+<li>一个是消息Message：Message是通信双方需要传递的消息，它可以是文本、图片、视频等。消息包含发送和接收者的标识，只有指定的用户才能取得消息。</li>
+<li>一个是队列Queue：用来保存消息的存储空间，MSMQ中主要包括以下几种队列类型：</li>
+</ul>
+<ul>
+<li>公共队列：在整个消息队列网络中复制，有可能由网络连接的所有站点访问。路径格式为：机器名称\队列名称</li>
+<li>专用队列（或叫私有队列）：不在整个网络中发布，它们仅在所驻留的本地计算机上可用，专用队列只能由知道队列的完整路径名称或标签的应用程序访问。路径格式为：机器名称\Private$\队列名称</li>
+<li>日志队列：包含确认在给定“消息队列中发送的消息回执消息”。路径格式为：机器名称\队列名称\Journal$</li>
+<li>响应队列：包含目标应用程序接收到消息时返回给发送应用程序的响应消息，包括机器日志队列、机器死信队列和机器事务死信队列。</li>
+</ul>
+<ol>
+<li>机器日志队列对应的格式为：机器名称\Journal$；</li>
+<li>机器死信队列对应的格式为：机器名称\Deadletter$；</li>
+<li>机器信道死信队列对应的格式为：机器名称\XactDeadletter$。</li>
+</ol>
+<h4 id="2-2-队列引用说明"><a href="#2-2-队列引用说明" class="headerlink" title="2.2 队列引用说明"></a>2.2 队列引用说明</h4><p>当创建了一个MessageQueue实例之后，就应指明和哪个队列进行通信，在.NET中有3种访问指定消息队列的方法：</p>
+<ul>
+<li>使用路径，消息队列的路径被机器名和队列名唯一确定，所以可以用消息队列路径来指明使用的消息队列。</li>
+<li>使用格式名（format name），它是由MSMQ在消息队列创建时生成的唯一标识，个使命不由用户指定，而是由队列管理者自动生成的GUID。</li>
+<li>使用标识名（label），它是消息队列创建时由消息管理者指定的带有意义的名字。<h3 id="3-消息队列的优缺点"><a href="#3-消息队列的优缺点" class="headerlink" title="3. 消息队列的优缺点"></a>3. 消息队列的优缺点</h3>　　采用消息队列的好处是：由于是异步通信，无论是发送方还是接收方都不同等待对方返回成功消息，就可以执行余下的代码，大大提高了处理的能力；在信息传递过程中，具有故障恢复能力；MSMQ的消息传递机制使得通信的双方具有不同的物理平台成为可能。<br>　　消息队列缺点是不适合Client需要Server端实时交互情况，大量请求时候，响应可能延迟。</li>
+</ul>
+<h3 id="4-MSMQ开发应用"><a href="#4-MSMQ开发应用" class="headerlink" title="4. MSMQ开发应用"></a>4. MSMQ开发应用</h3><h4 id="4-1-环境准备"><a href="#4-1-环境准备" class="headerlink" title="4.1 环境准备"></a>4.1 环境准备</h4><p> 　　要想在.NET平台进行MSMQ的开发，需要安装消息队列，你需要打开控制面板-&gt;程序-&gt;打开或关闭Windows功能，勾选消息队列服务所有选项，具体操作如下图所示：<br><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/install.png" alt="安装"><br>勾选完之后点击确定之后，可以在我的电脑-&gt;管理-&gt;服务和应用程序-&gt;消息队列 看到下面的图：<br><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/show.png" alt="安装结果"></p>
+<p>　　看到上面这个图代表你已经成功配置了MSMQ的开发环境，下面就可以使用Visual Studio 进行开发。注意，对特定类型队列的操作代码，一定要成功安装对应的队列类型。</p>
+<h4 id="4-2-使用MSMQ开发分布式应用"><a href="#4-2-使用MSMQ开发分布式应用" class="headerlink" title="4.2 使用MSMQ开发分布式应用"></a>4.2 使用MSMQ开发分布式应用</h4><p>　　首先，实现服务器端。创建一个控制台项目，添加System.Messaging引用，因为消息队列的类全部封装在System.Messaging.dll程序集里。具体服务端的代码如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Messaging;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MSMQServer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span><br><span class="line">        </span>&#123;</span><br><span class="line">            <span class="comment">// 创建一个公共队列,公共队列只能创建在域环境里</span></span><br><span class="line">            <span class="comment">//if (!MessageQueue.Exists(@".\LearningHardMSMQ")) // 判断此路径下是否已经有该队列</span></span><br><span class="line">            <span class="comment">//&#123;</span></span><br><span class="line">            <span class="comment">//    using (MessageQueue mq = MessageQueue.Create(@".\LearningHardMSMQ"))</span></span><br><span class="line">            <span class="comment">//    &#123;</span></span><br><span class="line">            <span class="comment">//        mq.Label = "LearningHardQueue"; // 设置队列标签</span></span><br><span class="line">            <span class="comment">//        Console.WriteLine("已经创建了一个公共队列");</span></span><br><span class="line">            <span class="comment">//        Console.WriteLine("路径为:&#123;0&#125;", mq.Path);</span></span><br><span class="line">            <span class="comment">//        Console.WriteLine("队列名字为:&#123;0&#125;", mq.QueueName);</span></span><br><span class="line">            <span class="comment">//        mq.Send("MSMQ Message", "Leaning Hard"); // 发送消息</span></span><br><span class="line">            <span class="comment">//    &#125;</span></span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//if (MessageQueue.Exists(@".\Private$\LearningHardMSMQ"))</span></span><br><span class="line">            <span class="comment">//&#123;</span></span><br><span class="line">                  <span class="comment">// 删除消息队列</span></span><br><span class="line">            <span class="comment">//    MessageQueue.Delete(@".\Private$\LearningHardMSMQ");</span></span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line">            <span class="comment">// 创建一个私有消息队列</span></span><br><span class="line">            <span class="keyword">if</span> (!MessageQueue.Exists(<span class="string">@".\Private$\LearningHardMSMQ"</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">using</span> (MessageQueue mq = MessageQueue.Create(<span class="string">@".\Private$\LearningHardMSMQ"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    mq.Label = <span class="string">"LearningHardPrivateQueue"</span>; </span><br><span class="line">                    Console.WriteLine(<span class="string">"已经创建了一个私有队列"</span>);</span><br><span class="line">                    Console.WriteLine(<span class="string">"路径为:&#123;0&#125;"</span>, mq.Path);</span><br><span class="line">                    Console.WriteLine(<span class="string">"私有队列名字为:&#123;0&#125;"</span>, mq.QueueName);</span><br><span class="line">                    mq.Send(<span class="string">"MSMQ Private Message"</span>, <span class="string">"Leaning Hard"</span>); <span class="comment">// 发送消息</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 遍历所有的公共消息队列</span></span><br><span class="line">            <span class="comment">//foreach (MessageQueue mq in MessageQueue.GetPublicQueues())</span></span><br><span class="line">            <span class="comment">//&#123;</span></span><br><span class="line">            <span class="comment">//    mq.Send("Sending MSMQ public message" + DateTime.Now.ToLongDateString(), "Learning Hard");</span></span><br><span class="line">            <span class="comment">//    Console.WriteLine("Public Message is sent to &#123;0&#125;", mq.Path);</span></span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line">           </span><br><span class="line">            <span class="keyword">if</span> (MessageQueue.Exists(<span class="string">@".\Private$\LearningHardMSMQ"</span>)) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 获得私有消息队列</span></span><br><span class="line">                MessageQueue mq = <span class="keyword">new</span> MessageQueue(<span class="string">@".\Private$\LearningHardMSMQ"</span>);</span><br><span class="line">                mq.Send(<span class="string">"Sending MSMQ private message"</span> + DateTime.Now.ToLongDateString(), <span class="string">"Leaning Hard"</span>);</span><br><span class="line">                Console.WriteLine(<span class="string">"Private Message is sent to &#123;0&#125;"</span>, mq.Path);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Console.Read();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">服务器端代码需要注意的是，公共队列只能在域环境中创建，由于我的个人电脑没有加入域环境，所以不能创建公共队列，从开始的消息队列的截图也可以看出，在图中并没有安装公共队列。</span><br><span class="line"></span><br><span class="line">　　实现完服务器端之后，自然就是完成客户端。MSMQ程序的原理主要是：服务器端把消息发送到共享的消息队列中，然后，客户端从这个共享的消息队列中取出消息进行处理。具体客户端的实现代码如下所示：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` cs</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Messaging; <span class="comment">// 需要添加System.Messaging引用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MSMQClient</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span><br><span class="line">        </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (MessageQueue.Exists(<span class="string">@".\Private$\LearningHardMSMQ"</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 创建消息队列对象</span></span><br><span class="line">                <span class="keyword">using</span> (MessageQueue mq = <span class="keyword">new</span> MessageQueue(<span class="string">@".\Private$\LearningHardMSMQ"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">// 设置消息队列的格式化器</span></span><br><span class="line">                    mq.Formatter = <span class="keyword">new</span> XmlMessageFormatter(<span class="keyword">new</span> <span class="keyword">string</span>[] &#123; <span class="string">"System.String"</span> &#125;);</span><br><span class="line">                    <span class="keyword">foreach</span> (Message msg <span class="keyword">in</span> mq.GetAllMessages())</span><br><span class="line">                    &#123;</span><br><span class="line">                        Console.WriteLine(<span class="string">"Received Private Message is: &#123;0&#125;"</span>, msg.Body);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    Message firstmsg = mq.Receive(); <span class="comment">// 获得消息队列中第一条消息</span></span><br><span class="line">                    Console.WriteLine(<span class="string">"Received The first Private Message is: &#123;0&#125;"</span>, firstmsg.Body);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Console.Read();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-3-运行演示"><a href="#4-3-运行演示" class="headerlink" title="4.3 运行演示"></a>4.3 运行演示</h4><p>经过上面步骤，我们已经完成了MSMQ分布式程序的实现了，下面看看如何运行该程序来查看效果。</p>
+<p>　　首先，自然要启动服务器，右键MSMQServer项目-&gt;调试-&gt;启动新实例来启动服务器，具体步骤如下图所示：<br><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/run.png" alt=""></p>
+<p>运行成功之后，你将到服务器发送消息成功的控制台界面，效果图如下所示：<br><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/result1.png" alt=""><br>　接下来运行客户端来从消息队列中取得消息并显示在控制台中，采用和服务器相同的方式来启动客户端，右键MSMQClient-&gt;调试-&gt;启动新实例，看到客户端的效果如下图所示：<br><img src="../../../../images/20160317-MSMQxiaoxiduilie-md/result2.png" alt=""><br>从上图可以看出，客户端确实成功地取得了消息队列中的消息。<br>   以上MSMQ程序需要特别注意是：MessageQueue.Receive()是取出消息队列中队列中的第一条消息，并从消息队列中移除它（MSDN中文翻译上是错误，MSDN写的是不移除，而英文原文是移除），而实际结果也是移除的，如果你再运行一次客户端时，你会发现消息队列中只有一条消息，具体运行效果如下图所示：<br>    <img src="../../../../images/20160317-MSMQxiaoxiduilie-md/result2.png" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag">#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/20160321-CentOS7-FireWall/" rel="next" title="CentOS 防火墙相关">
+                <i class="fa fa-chevron-left"></i> CentOS 防火墙相关
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/21/20160321-CSharp-Operator/" rel="prev" title="C# 操作符问号和双问号的释义">
+                C# 操作符问号和双问号的释义 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.png"
+               alt="Bruce He" />
+          <p class="site-author-name" itemprop="name">Bruce He</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引言"><span class="nav-number">1.</span> <span class="nav-text">1. 引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-简介"><span class="nav-number">2.</span> <span class="nav-text">2. 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-工作原理"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-队列引用说明"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 队列引用说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-消息队列的优缺点"><span class="nav-number">3.</span> <span class="nav-text">3. 消息队列的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-MSMQ开发应用"><span class="nav-number">4.</span> <span class="nav-text">4. MSMQ开发应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-环境准备"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 环境准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-使用MSMQ开发分布式应用"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 使用MSMQ开发分布式应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-运行演示"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 运行演示</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bruce He</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
