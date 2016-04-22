@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Sports," />
+  <meta name="keywords" content="MSSQL," />
 
 
 
@@ -57,18 +57,16 @@
 
 
 
-<meta name="description" content="室内运动动作">
+<meta name="description" content="在sql server数据迁移时将旧表中的数据迁移到新表中解决主键不能插入的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="室内运动动作">
-<meta property="og:url" content="http://yoursite.com/2016/04/04/20160404-some-action-can-do-in-room/index.html">
+<meta property="og:title" content="SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作">
+<meta property="og:url" content="http://yoursite.com/2016/04/22/20160422-Sql-Server-insert-into-Primary-key/index.html">
 <meta property="og:site_name" content="Bruce">
-<meta property="og:description" content="室内运动动作">
-<meta property="og:image" content="http://yoursite.com/../../../../images/20160404-some-action-can-do-in-room/2.gif">
-<meta property="og:updated_time" content="2016-04-04T13:46:28.938Z">
+<meta property="og:description" content="在sql server数据迁移时将旧表中的数据迁移到新表中解决主键不能插入的问题">
+<meta property="og:updated_time" content="2016-04-22T15:54:19.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="室内运动动作">
-<meta name="twitter:description" content="室内运动动作">
-<meta name="twitter:image" content="http://yoursite.com/../../../../images/20160404-some-action-can-do-in-room/2.gif">
+<meta name="twitter:title" content="SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作">
+<meta name="twitter:description" content="在sql server数据迁移时将旧表中的数据迁移到新表中解决主键不能插入的问题">
 
 
 
@@ -86,7 +84,7 @@
   };
 </script>
 
-  <title> 室内运动动作 | Bruce </title>
+  <title> SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作 | Bruce </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -196,7 +194,7 @@
             
             
               
-                室内运动动作
+                SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作
               
             
           </h1>
@@ -208,8 +206,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-04-04T21:20:00-07:00" content="2016-04-04">
-              2016-04-04
+            <time itemprop="dateCreated" datetime="2016-04-22T23:20:00-07:00" content="2016-04-22">
+              2016-04-22
             </time>
           </span>
 
@@ -222,8 +220,8 @@
               <span class="post-meta-item-text">in</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Sports/" itemprop="url" rel="index">
-                    <span itemprop="name">Sports</span>
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
                   </a>
                 </span>
 
@@ -252,34 +250,18 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/../../../../images/20160404-some-action-can-do-in-room/2.gif" rel="gallery_cinbw19s7000p9bpvyxabgfmg"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/../../../../images/20160404-some-action-can-do-in-room/2.gif" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <h2 id="网上发现的一些可以尝试的动作"><a href="#网上发现的一些可以尝试的动作" class="headerlink" title="网上发现的一些可以尝试的动作"></a>网上发现的一些可以尝试的动作</h2><h3 id="1-前后弓箭蹲跳-4X20次"><a href="#1-前后弓箭蹲跳-4X20次" class="headerlink" title="1. 前后弓箭蹲跳  4X20次"></a>1. 前后弓箭蹲跳  4X20次</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/2.gif" alt="前后弓箭蹲跳 "><br>运动肌群：臀肌、四头肌、大小腿、核心</p>
-<h3 id="2-Burpees-波比-3X16-次"><a href="#2-Burpees-波比-3X16-次" class="headerlink" title="2. Burpees (波比) 3X16 次"></a>2. Burpees (波比) 3X16 次</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/3.gif" alt="波比 "><br>运动肌群：臀部、大小腿、核心、肩膀、胸背<br>动作分解：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 蹲下</span><br><span class="line"><span class="number">2.</span> 后踢脚</span><br><span class="line"><span class="number">3.</span> 俯卧冲</span><br><span class="line"><span class="number">4.</span> 前跳</span><br><span class="line"><span class="number">5.</span> 垂直跳</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-登山者-3X30秒"><a href="#3-登山者-3X30秒" class="headerlink" title="3. 登山者 3X30秒"></a>3. 登山者 3X30秒</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/4.gif" alt="登山者 "><br>运动肌群：核心、肩膀、三头肌</p>
-<h3 id="4-单手俯卧撑-3X5次-（每侧）"><a href="#4-单手俯卧撑-3X5次-（每侧）" class="headerlink" title="4. 单手俯卧撑 3X5次 （每侧）"></a>4. 单手俯卧撑 3X5次 （每侧）</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/5.gif" alt="登山者 "><br>运动肌群：核心、胸、三角肌、三头肌</p>
-<h3 id="5-双手合并俯卧撑-3X12次"><a href="#5-双手合并俯卧撑-3X12次" class="headerlink" title="5. 双手合并俯卧撑 3X12次"></a>5. 双手合并俯卧撑 3X12次</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/6.gif" alt="登山者 "><br>运动肌群：核心、胸、三角肌、三头肌</p>
-<h3 id="6-标准倒立撑3X8次"><a href="#6-标准倒立撑3X8次" class="headerlink" title="6. 标准倒立撑3X8次"></a>6. 标准倒立撑3X8次</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/7.gif" alt="登山者 "><br>运动肌群：核心、三角肌、三头肌</p>
-<h3 id="7-L坐地撑3X15秒"><a href="#7-L坐地撑3X15秒" class="headerlink" title="7. L坐地撑3X15秒"></a>7. L坐地撑3X15秒</h3><p><img src="../../../../images/20160404-some-action-can-do-in-room/8.gif" alt="登山者 "><br>运动肌群：核心、髋屈肌、四头肌、斜方肌、三角肌、前臂</p>
-<blockquote>
-<p>以上各种仅供参考，运动时注意安全 </p>
-</blockquote>
+        <h3 id="SQL-Server-在含有主键自增的表中执行插入自定义的主键的查询操作"><a href="#SQL-Server-在含有主键自增的表中执行插入自定义的主键的查询操作" class="headerlink" title="SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作"></a>SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作</h3><ol>
+<li><p>SQL 语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> IDENTITY_INSERT [ <span class="keyword">database</span>. [ owner. ] ] &#123; <span class="keyword">table</span> <span class="keyword">name</span> &#125; &#123; <span class="keyword">ON</span> | <span class="keyword">OFF</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Create products table. (创建产品表)</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> products (<span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">IDENTITY</span> PRIMARY <span class="keyword">KEY</span>, product <span class="built_in">varchar</span>(<span class="number">40</span>))</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"><span class="comment">-- Inserting values into products table.</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (product) <span class="keyword">VALUES</span> (<span class="string">'screwdriver'</span>)</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (product) <span class="keyword">VALUES</span> (<span class="string">'hammer'</span>)</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (product) <span class="keyword">VALUES</span> (<span class="string">'saw'</span>)</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (product) <span class="keyword">VALUES</span> (<span class="string">'shovel'</span>)</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Create a gap in the identity values. (删除第三行造成一个Id的间隔)</span></span><br><span class="line"><span class="keyword">DELETE</span> products </span><br><span class="line"><span class="keyword">WHERE</span> product = <span class="string">'saw'</span></span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Attempt to insert an explicit ID value of 3; (尝试插入ID为3的一列数据) </span></span><br><span class="line"><span class="comment">-- should return a warning. (数据库会返回一个错误) </span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (<span class="keyword">id</span>, product) <span class="keyword">VALUES</span>(<span class="number">3</span>, <span class="string">'garden shovel'</span>)</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- SET IDENTITY_INSERT to ON. (设置该表的IDENTITY_INSERT 为ON)</span></span><br><span class="line"><span class="keyword">SET</span> IDENTITY_INSERT products <span class="keyword">ON</span></span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Attempt to insert an explicit ID value of 3 (再次执行插入操作就会成功的插入数据) </span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (<span class="keyword">id</span>, product) <span class="keyword">VALUES</span>(<span class="number">3</span>, <span class="string">'garden shovel'</span>).</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"><span class="comment">-- Drop products table.</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> products</span><br><span class="line"><span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意<br>IDENTITY_INSERT 属性在整个数据库中只有一个，如果在一个表中使用完成后必须将其关闭。如果没有关闭的话在该数据库的其他表中执行此类操作则会出现错误（SET IDENTITY_INSERT  ON  时会出现错误，不能正常打开），所以必须在使用完成后顺便将其关闭才能方便下次的调用。<br>代码如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- SET IDENTITY_INSERT to ON. </span></span><br><span class="line"><span class="keyword">SET</span> IDENTITY_INSERT products <span class="keyword">ON</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- you other insert operations</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> products (<span class="keyword">id</span>, product) <span class="keyword">VALUES</span>(<span class="number">3</span>, <span class="string">'garden shovel'</span>)</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="comment">-- SET IDENTITY_INSERT to ON. </span></span><br><span class="line"><span class="keyword">SET</span> IDENTITY_INSERT products <span class="keyword">OFF</span> </span><br><span class="line"><span class="keyword">GO</span></span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -294,7 +276,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Sports/" rel="tag">#Sports</a>
+            <a href="/tags/MSSQL/" rel="tag">#MSSQL</a>
           
         </div>
       
@@ -303,17 +285,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/22/20160322-CSharp-xiangdengxinghetongyixing/" rel="next" title="C# 对象的相等性与同一性">
-                <i class="fa fa-chevron-left"></i> C# 对象的相等性与同一性
+              <a href="/2016/04/04/20160404-some-action-can-do-in-room/" rel="next" title="室内运动动作">
+                <i class="fa fa-chevron-left"></i> 室内运动动作
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/22/20160422-Sql-Server-insert-into-Primary-key/" rel="prev" title="SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作">
-                SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -432,7 +410,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网上发现的一些可以尝试的动作"><span class="nav-number">1.</span> <span class="nav-text">网上发现的一些可以尝试的动作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前后弓箭蹲跳-4X20次"><span class="nav-number">1.1.</span> <span class="nav-text">1. 前后弓箭蹲跳  4X20次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Burpees-波比-3X16-次"><span class="nav-number">1.2.</span> <span class="nav-text">2. Burpees (波比) 3X16 次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-登山者-3X30秒"><span class="nav-number">1.3.</span> <span class="nav-text">3. 登山者 3X30秒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-单手俯卧撑-3X5次-（每侧）"><span class="nav-number">1.4.</span> <span class="nav-text">4. 单手俯卧撑 3X5次 （每侧）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-双手合并俯卧撑-3X12次"><span class="nav-number">1.5.</span> <span class="nav-text">5. 双手合并俯卧撑 3X12次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-标准倒立撑3X8次"><span class="nav-number">1.6.</span> <span class="nav-text">6. 标准倒立撑3X8次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-L坐地撑3X15秒"><span class="nav-number">1.7.</span> <span class="nav-text">7. L坐地撑3X15秒</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Server-在含有主键自增的表中执行插入自定义的主键的查询操作"><span class="nav-number">1.</span> <span class="nav-text">SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

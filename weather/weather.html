@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <link href="weather.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="bgImg clear">
+        <div class="curContent">
+                <p class="curCity" id="curCity"></p>
+                <p class="curTime"> 
+
+                <span id="curDate"></span> 
+                 &nbsp;
+                 <span id="curWeek"></span>
+                 </p>
+                <div>
+                    <div class="changeCity" >
+                        <label for="switchCity">
+                            <input type="button" value="[切换城市]" class="btCity" id="switchCity" />
+                        </label>
+                    </div>
+                    <div class="selectCity" id="selectCity">
+                        <div id="province"></div>
+                        <div id="city"></div>
+                        <div id="area" dataid="101010200"></div>
+                        <input type="button" id='subCity' value="确定" class="ensure" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="curWeather clear" id="curWeather">
+                
+            </div>
+            <ul class="preWeather" id="preWeek"></ul>
+        </div>
+     <script src="jquery-1.11.2.js"></script>   
+    <script src="citys.js"></script>
+    <script src="weather.js"></script>
+
+    </body>
+    </html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <link href="weather.css" rel="stylesheet">
+    <script src="js/jquery-1.11.2.js"></script>
+</head>
+
+<body>
+    <div class="背景图">
+        <div class="当前状态">
+            <p class="海淀" id=""></p>
+            <span class="日期" id ></span>
+            &nbsp;
+            <span class="星期" id ></span>
+        </div>
+        <div class="切换城市"> 
+            <label for="">
+                <input type="button" value="切换城市" class="" id="">
+            </label>
+            <div class="隐藏的div">
+                <div class="省" id=""></div>
+                <div class="市" id=""></div>
+                <div class="区" id=""></div>
+            </div>
+            <div class="当前天气" id="">
+
+            </div>
+
+            <div class="未来预测天气">
+                <ul id="预测未来天气"></ul>
+
+            </div>
+
+        </div>
+    </div>
+
+</body> -->
