@@ -1,0 +1,693 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSharp," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="CSharp 调用控制台程序或命令行程序，传入命令执行并获取返回的结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSharp 调用控制台程序传入命令并执行">
+<meta property="og:url" content="http://yoursite.com/2016/04/25/20160425-CSharp-Call-The-Commond/index.html">
+<meta property="og:site_name" content="Bruce">
+<meta property="og:description" content="CSharp 调用控制台程序或命令行程序，传入命令执行并获取返回的结果">
+<meta property="og:updated_time" content="2016-04-25T14:09:50.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSharp 调用控制台程序传入命令并执行">
+<meta name="twitter:description" content="CSharp 调用控制台程序或命令行程序，传入命令执行并获取返回的结果">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> CSharp 调用控制台程序传入命令并执行 | Bruce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Bruce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSharp 调用控制台程序传入命令并执行
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T22:20:00-07:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSharp/" itemprop="url" rel="index">
+                    <span itemprop="name">CSharp</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="CSharp-调用命令行实例"><a href="#CSharp-调用命令行实例" class="headerlink" title="CSharp 调用命令行实例"></a>CSharp 调用命令行实例</h2><p>在使用C#调用命令行程序时因为需要输入命令行要执行的命令所以经过很多尝试得到一些结果。</p>
+<h4 id="1-调用CMD"><a href="#1-调用CMD" class="headerlink" title="1. 调用CMD"></a>1. 调用CMD</h4><p>实例1：在调用CMD的命令时可以通过对输入流进行重定向的设置，然后进行不断的输入。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 执行cmd命令 输出计算机内核及其他信息</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CreateDll</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    Process p = <span class="keyword">new</span> Process();</span><br><span class="line">    p.StartInfo.FileName = <span class="string">"cmd.exe"</span>;</span><br><span class="line">    <span class="comment">//是否使用操作系统shell启动</span></span><br><span class="line">    p.StartInfo.UseShellExecute = <span class="keyword">false</span>;</span><br><span class="line">    <span class="comment">//重定向输入流，接受来自调用程序的输入信息</span></span><br><span class="line">    p.StartInfo.RedirectStandardInput = <span class="keyword">true</span>;</span><br><span class="line">    <span class="comment">//由调用程序获取输出信息</span></span><br><span class="line">    p.StartInfo.RedirectStandardOutput = <span class="keyword">true</span>;</span><br><span class="line">    p.StartInfo.RedirectStandardError = <span class="keyword">true</span>;</span><br><span class="line">    p.StartInfo.CreateNoWindow = <span class="keyword">false</span>;</span><br><span class="line">    p.Start();</span><br><span class="line">    <span class="comment">/*写入要实行的命令此处是可以使用循环不断的写入和或去输入的*/</span></span><br><span class="line">    p.StandardInput.WriteLine(<span class="string">"systeminfo"</span>);</span><br><span class="line">    Console.Write(p.StandardOutput.ReadToEnd());</span><br><span class="line">    p.StandardInput.WriteLine(<span class="string">"exit"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 执行Cmd命令</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">RunCmd</span>(<span class="params"></span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">string</span> str = Console.ReadLine();</span><br><span class="line"></span><br><span class="line">    System.Diagnostics.Process p = <span class="keyword">new</span> System.Diagnostics.Process();</span><br><span class="line">    p.StartInfo.FileName = <span class="string">"cmd.exe"</span>;</span><br><span class="line">    p.StartInfo.UseShellExecute = <span class="keyword">false</span>;    <span class="comment">//是否使用操作系统shell启动</span></span><br><span class="line">    p.StartInfo.RedirectStandardInput = <span class="keyword">true</span>;<span class="comment">//接受来自调用程序的输入信息</span></span><br><span class="line">    p.StartInfo.RedirectStandardOutput = <span class="keyword">true</span>;<span class="comment">//由调用程序获取输出信息</span></span><br><span class="line">    p.StartInfo.RedirectStandardError = <span class="keyword">true</span>;<span class="comment">//重定向标准错误输出</span></span><br><span class="line">    p.StartInfo.CreateNoWindow = <span class="keyword">true</span>;<span class="comment">//不显示程序窗口</span></span><br><span class="line">    p.Start();<span class="comment">//启动程序</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//向cmd窗口发送输入信息</span></span><br><span class="line">    p.StandardInput.WriteLine(str + <span class="string">"&amp;exit"</span>);</span><br><span class="line"></span><br><span class="line">    p.StandardInput.AutoFlush = <span class="keyword">true</span>;</span><br><span class="line">    <span class="comment">//p.StandardInput.WriteLine("exit");</span></span><br><span class="line">    <span class="comment">//向标准输入写入要执行的命令。这里使用&amp;是批处理命令的符号，表示前面一个命令不管是否执行成功都执行后面(exit)命令，如果不执行exit命令，后面调用ReadToEnd()方法会假死</span></span><br><span class="line">    <span class="comment">//同类的符号还有&amp;&amp;和||前者表示必须前一个命令执行成功才会执行后面的命令，后者表示必须前一个命令执行失败才会执行后面的命令</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//获取cmd窗口的输出信息</span></span><br><span class="line">    <span class="keyword">string</span> output = p.StandardOutput.ReadToEnd();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//StreamReader reader = p.StandardOutput;</span></span><br><span class="line">    <span class="comment">//string line=reader.ReadLine();</span></span><br><span class="line">    <span class="comment">//while (!reader.EndOfStream)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    str += line + "  ";</span></span><br><span class="line">    <span class="comment">//    line = reader.ReadLine();</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    p.WaitForExit();<span class="comment">//等待程序执行完退出进程</span></span><br><span class="line">    p.Close();</span><br><span class="line">    </span><br><span class="line">    Console.WriteLine(output);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实例2：此外还可以通过传入参数的方式调用<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 执行DOS命令，返回DOS命令的输出  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="dosCommand"&gt;</span>dos命令<span class="doctag">&lt;/param&gt;</span>  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="milliseconds"&gt;</span>等待命令执行的时间（单位：毫秒），  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 如果设定为0，则无限等待<span class="doctag">&lt;/param&gt;</span>  </span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>返回DOS命令的输出<span class="doctag">&lt;/returns&gt;</span>  </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">string</span> <span class="title">Execute</span>(<span class="params"><span class="keyword">string</span> command, <span class="keyword">int</span> seconds</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">string</span> output = <span class="string">""</span>; <span class="comment">//输出字符串  </span></span><br><span class="line">    <span class="keyword">if</span> (command != <span class="keyword">null</span> &amp;&amp; !command.Equals(<span class="string">""</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        Process process = <span class="keyword">new</span> Process();<span class="comment">//创建进程对象  </span></span><br><span class="line">        ProcessStartInfo startInfo = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">        startInfo.FileName = <span class="string">"cmd.exe"</span>;<span class="comment">//设定需要执行的命令  </span></span><br><span class="line">        <span class="comment">/*程序调用时将命令作为蚕食传入*/</span></span><br><span class="line">        startInfo.Arguments = <span class="string">"/C "</span> + command;<span class="comment">//“/C”表示执行完命令后马上退出  </span></span><br><span class="line">        <span class="comment">/*此处可以通过在不容命令之间加入&amp; 或者换行符（\n\r）进行分割传入多个命令*/</span></span><br><span class="line">        <span class="comment">//startInfo.Arguments = "/C dir &amp; dir \n\r dir";</span></span><br><span class="line">        startInfo.UseShellExecute = <span class="keyword">false</span>;<span class="comment">//不使用系统外壳程序启动  </span></span><br><span class="line">        startInfo.RedirectStandardInput = <span class="keyword">false</span>;<span class="comment">//不重定向输入  </span></span><br><span class="line">        startInfo.RedirectStandardOutput = <span class="keyword">true</span>; <span class="comment">//重定向输出  </span></span><br><span class="line">        startInfo.CreateNoWindow = <span class="keyword">true</span>;<span class="comment">//不创建窗口  </span></span><br><span class="line">        process.StartInfo = startInfo;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (process.Start())<span class="comment">//开始进程  </span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (seconds == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    process.WaitForExit();<span class="comment">//这里无限等待进程结束  </span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    process.WaitForExit(seconds); <span class="comment">//等待进程结束，等待时间为指定的毫秒  </span></span><br><span class="line">                &#125;</span><br><span class="line">                output = process.StandardOutput.ReadToEnd();<span class="comment">//读取进程的输出  </span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span></span><br><span class="line">        &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (process != <span class="keyword">null</span>)</span><br><span class="line">                process.Close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-调用Git-Bush"><a href="#2-调用Git-Bush" class="headerlink" title="2. 调用Git Bush"></a>2. 调用Git Bush</h4><p>调用Git Bush时可能与CMD有一些不同此时我的github是（GitHubSetup.exe）安装完成后由一个GUI和一个Bush。在平时使用Bush时直接打开的是安装目录下的git-bash.exe，但是如果通过C#调用的话是不行的不许调用 bin\bash.exe（具体原因我也不知道）。<br>而且不能像CMD的实例1那样写入命令，只能通过参数的方式写入。上代码。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 执行Git命令</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="command"&gt;</span>要执行的命令<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ExecuteGitCommand</span>(<span class="params"><span class="keyword">string</span> command</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    Process proc = <span class="keyword">new</span> System.Diagnostics.Process();</span><br><span class="line">    proc.StartInfo.FileName = <span class="string">@"D:\Program Files\Git\bin\bash.exe"</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">/*此处可以通过在不容命令之间加入&amp; 或者换行符（\n\r）进行分割传入多个命令*/</span></span><br><span class="line">    proc.StartInfo.Arguments = <span class="string">"-c \""</span> + command + <span class="string">"\""</span>;</span><br><span class="line">    proc.StartInfo.UseShellExecute = <span class="keyword">false</span>;</span><br><span class="line">    proc.StartInfo.RedirectStandardOutput = <span class="keyword">true</span>;</span><br><span class="line">    proc.Start();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!proc.StandardOutput.EndOfStream)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(proc.StandardOutput.ReadLine());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">RunGitBush</span>(<span class="params"><span class="keyword">string</span> command</span>)</span><br><span class="line"></span>&#123; </span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// create the ProcessStartInfo using "cmd" as the program to be run,</span></span><br><span class="line">        <span class="comment">// and "/c " as the parameters.</span></span><br><span class="line">        <span class="comment">// Incidentally, /c tells cmd that we want it to execute the command that follows,</span></span><br><span class="line">        <span class="comment">// and then exit.</span></span><br><span class="line">        System.Diagnostics.ProcessStartInfo procStartInfo =</span><br><span class="line">            <span class="keyword">new</span> System.Diagnostics.ProcessStartInfo(<span class="string">@"D:\Program Files\Git\bin\bash.exe"</span>, <span class="string">"/c "</span> + command);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// The following commands are needed to redirect the standard output.</span></span><br><span class="line">        <span class="comment">// This means that it will be redirected to the Process.StandardOutput StreamReader.</span></span><br><span class="line">        procStartInfo.RedirectStandardOutput = <span class="keyword">true</span>;</span><br><span class="line">        procStartInfo.UseShellExecute = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// Do not create the black window.</span></span><br><span class="line">        procStartInfo.CreateNoWindow = <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// Now we create a process, assign its ProcessStartInfo and start it</span></span><br><span class="line">        System.Diagnostics.Process proc = <span class="keyword">new</span> System.Diagnostics.Process();</span><br><span class="line">        proc.StartInfo = procStartInfo;</span><br><span class="line">        proc.Start();</span><br><span class="line">        <span class="comment">// Get the output into a string</span></span><br><span class="line">        <span class="keyword">string</span> result = proc.StandardOutput.ReadToEnd();</span><br><span class="line">        <span class="comment">// Display the command output.</span></span><br><span class="line">        Console.WriteLine(result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (Exception objException)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Log the exception</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-此外还可以通过Process的其他传参设置进行其他操作如"><a href="#3-此外还可以通过Process的其他传参设置进行其他操作如" class="headerlink" title="3.  此外还可以通过Process的其他传参设置进行其他操作如"></a>3.  此外还可以通过Process的其他传参设置进行其他操作如</h4><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置程序运行目录</span></span><br><span class="line">processStartInfo.WorkingDirectory = <span class="string">@"E:\testgit"</span>;</span><br><span class="line"><span class="comment">//不显示程序窗口</span></span><br><span class="line">p.StartInfo.CreateNoWindow = <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSharp/" rel="tag">#CSharp</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/22/20160422-Sql-Server-insert-into-Primary-key/" rel="next" title="SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作">
+                <i class="fa fa-chevron-left"></i> SQL Server 在含有主键自增的表中执行插入自定义的主键的查询操作
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.png"
+               alt="Bruce He" />
+          <p class="site-author-name" itemprop="name">Bruce He</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSharp-调用命令行实例"><span class="nav-number">1.</span> <span class="nav-text">CSharp 调用命令行实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-调用CMD"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 调用CMD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-调用Git-Bush"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 调用Git Bush</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-此外还可以通过Process的其他传参设置进行其他操作如"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.  此外还可以通过Process的其他传参设置进行其他操作如</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bruce He</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
