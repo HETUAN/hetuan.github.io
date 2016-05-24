@@ -1,0 +1,744 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="通过Hexo创建该博客的目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo + github 搭建静态博客">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/20160524-Hexo-and-git-build-blog/index.html">
+<meta property="og:site_name" content="Bruce">
+<meta property="og:description" content="通过Hexo创建该博客的目录">
+<meta property="og:image" content="http://yoursite.com/../../../../images/20160524-Hexo-and-git-build-blog/flow.PNG">
+<meta property="og:updated_time" content="2016-05-24T13:52:52.861Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo + github 搭建静态博客">
+<meta name="twitter:description" content="通过Hexo创建该博客的目录">
+<meta name="twitter:image" content="http://yoursite.com/../../../../images/20160524-Hexo-and-git-build-blog/flow.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> hexo + github 搭建静态博客 | Bruce </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Bruce</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo + github 搭建静态博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-05-24T06:35:32-07:00" content="2016-05-24">
+              2016-05-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo创建博客/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo创建博客</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="hexo-github-搭建静态博客"><a href="#hexo-github-搭建静态博客" class="headerlink" title="hexo + github 搭建静态博客"></a>hexo + github 搭建静态博客</h1><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>下载安装</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>下载安装</p>
+<h2 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h2><p>创建一个目录存放npm源码。（直接安装的话会有源的问题）<br>在此目录下打开gitbush</p>
+<ol>
+<li><p>下载源代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive git://github.com/isaacs/npm.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;<span class="built_in">cd</span> npmjs</span><br><span class="line">D:\npmjs&gt;node cli.js install -gf  // 安装完成后要path路径</span><br><span class="line">npm -v //查看版本</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">hexo version //查看版本</span><br></pre></td></tr></table></figure>
+<h2 id="搭建blog"><a href="#搭建blog" class="headerlink" title="搭建blog"></a>搭建blog</h2><ol>
+<li><p>创建项目<br>打开cmd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">e:   //切换到epan</span><br><span class="line">mkdir hexo  // 创建文件夹</span><br><span class="line"><span class="built_in">cd</span> hexo   // 进入文件夹</span><br><span class="line">hexo init  // 初始化</span><br><span class="line">hexo s // 本地运行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写一篇blog</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new my first blog</span><br></pre></td></tr></table></figure>
+<ol>
+<li>生成bolg</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">heox g // 生成</span><br><span class="line"></span><br><span class="line">heox d  // 发布</span><br><span class="line"></span><br><span class="line">// 如果出现 ERROR Deployer not found: git</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ol>
+<li>配置<br>在生成之前需要配置远程地址等非必要信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title: Bruce<span class="string">'s Blog</span><br><span class="line">subtitle: a monkey</span><br><span class="line">description: blog</span><br><span class="line">author: Bruce He</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/bruce03/bruce03.github.io.git</span><br><span class="line">  branch: master</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="GitHub-配置"><a href="#GitHub-配置" class="headerlink" title="GitHub 配置"></a>GitHub 配置</h2><h3 id="1-注册帐号"><a href="#1-注册帐号" class="headerlink" title="1. 注册帐号"></a>1. 注册帐号</h3><pre><code>用户名+密码
+</code></pre><ol>
+<li>本地安装客户端</li>
+<li>添加本地电脑的sshkey<br>让本地git项目与远程的github建立联系要用SSH keys。<br><strong>检查SSH keys的设置</strong><br>首先我们需要检查你电脑上现有的ssh key：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh 检查本机的ssh密钥</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果提示：No such file or directory 说明是第一次使用git。</p>
+<p><strong>生成新的SSH Key：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span><br><span class="line"></span><br><span class="line">// 1: 邮箱地址要输入自己的邮箱地址；</span><br><span class="line">// 2: 此处的「-C」的是大写的「C」</span><br><span class="line">// 然后系统会要你输入密码：</span><br><span class="line"></span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串&gt;</span><br><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span><br><span class="line"></span><br><span class="line">//在回车中会提示输入一个密码，这个密码会在提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</span><br></pre></td></tr></table></figure></p>
+<p><strong>添加SSH Key到GitHub</strong></p>
+<ol>
+<li>打开本地C:\Users\username.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统。点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
+<li>把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</li>
+</ol>
+<p><strong>测试</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p><strong>设置用户信息</strong><br>现在已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。<br>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成自己的，名字必须是真名，而不是GitHub的昵称。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"bruce03"</span>//用户名</span><br><span class="line">$ git config --global user.email  <span class="string">"3320425386@qq.com"</span>//填写自己的邮箱</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-新建-repositories（仓库）"><a href="#4-新建-repositories（仓库）" class="headerlink" title="4. 新建 repositories（仓库）"></a>4. 新建 repositories（仓库）</h3><blockquote>
+<p>bruce03.github.io</p>
+</blockquote>
+<h3 id="5-常用命令"><a href="#5-常用命令" class="headerlink" title="5. 常用命令"></a>5. 常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init // 初始化项目</span><br><span class="line">git add . // 添加当前所有到缓存</span><br><span class="line">git commit -m <span class="string">"first commit"</span> // 提交</span><br><span class="line">git remote add origin https://github.com/bruce03/test.git  //设置远程地址</span><br><span class="line">git push -u origin master  // 推送</span><br></pre></td></tr></table></figure>
+<h3 id="blog-头部配置"><a href="#blog-头部配置" class="headerlink" title="blog 头部配置"></a>blog 头部配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: postName <span class="comment">#文章页面上的显示名称，可以任意修改，不会出现在URL中</span></span><br><span class="line">date: 2013-12-02 15:30:16 <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></span><br><span class="line">categories: example <span class="comment">#分类</span></span><br><span class="line">tags: [tag1,tag2,tag3] <span class="comment">#文章标签，可空，多标签请用格式，注意:后面有个空格</span></span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="hexo配置文件说明"><a href="#hexo配置文件说明" class="headerlink" title="hexo配置文件说明"></a>hexo配置文件说明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/tommy351/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site #整站的基本信息</span></span><br><span class="line">title: 1000 words a Day <span class="comment">#网站标题</span></span><br><span class="line">subtitle: Writing 1000 Words a Day Changes My Life <span class="comment">#网站副标题</span></span><br><span class="line">description: 学习总结 思考感悟 知识管理 <span class="comment">#网站描述</span></span><br><span class="line">author:  cnFeat <span class="comment">#网站作者，在下方显示</span></span><br><span class="line">email: cnFeat@gmail.com <span class="comment">#联系邮箱</span></span><br><span class="line">language: zh-CN</span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory</span></span><br><span class="line">url: http://www.cnfeat.com <span class="comment">#你的域名</span></span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="built_in">source</span>_dir: <span class="built_in">source</span></span><br><span class="line">public_dir: public</span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line">new_post_name: :title.md <span class="comment"># File name of new posts</span></span><br><span class="line">default_layout: post</span><br><span class="line">auto_spacing: <span class="literal">false</span> <span class="comment"># Add spaces between asian characters and western characters</span></span><br><span class="line">titlecase: <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line">external_link: <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">max_open_file: 100</span><br><span class="line">multi_thread: <span class="literal">true</span></span><br><span class="line">filename_<span class="keyword">case</span>: 0</span><br><span class="line">render_drafts: <span class="literal">false</span></span><br><span class="line">post_asset_folder: <span class="literal">false</span></span><br><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  tab_replace:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Archives</span></span><br><span class="line"><span class="comment">## 2: Enable pagination</span></span><br><span class="line"><span class="comment">## 1: Disable pagination</span></span><br><span class="line"><span class="comment">## 0: Fully Disable</span></span><br><span class="line">archive: 2</span><br><span class="line">category: 2</span><br><span class="line">tag: 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Server</span></span><br><span class="line"><span class="comment">## Hexo uses Connect as a server</span></span><br><span class="line"><span class="comment">## You can customize the logger format as defined in</span></span><br><span class="line"><span class="comment">## http://www.senchalabs.org/connect/logger.html</span></span><br><span class="line">port: 4000</span><br><span class="line">server_ip: 0.0.0.0</span><br><span class="line">logger: <span class="literal">false</span></span><br><span class="line">logger_format:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line">date_format: YYYY-MM-DD</span><br><span class="line">time_format: H:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line">per_page: 15 <span class="comment">#每页15篇文章</span></span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"><span class="comment"># Disqus #社会化评论disqus，我使用多说，在主题中配置</span></span><br><span class="line">disqus_shortname:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://github.com/tommy351/hexo/wiki/Plugins</span></span><br><span class="line"><span class="comment">## Themes: https://github.com/tommy351/hexo/wiki/Themes</span></span><br><span class="line">theme: jacman</span><br><span class="line">exclude_generator:</span><br><span class="line">Plugins:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">- hexo-generator-sitemap</span><br><span class="line"></span><br><span class="line"><span class="comment">#sitemap</span></span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br><span class="line"></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line">feed:</span><br><span class="line">  <span class="built_in">type</span>: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  <span class="built_in">limit</span>: 20</span><br><span class="line"></span><br><span class="line"><span class="comment"># Markdown</span></span><br><span class="line"><span class="comment">## https://github.com/chjj/marked</span></span><br><span class="line">markdown:</span><br><span class="line">  gfm: <span class="literal">true</span></span><br><span class="line">  pedantic: <span class="literal">false</span></span><br><span class="line">  sanitize: <span class="literal">false</span></span><br><span class="line">  tables: <span class="literal">true</span></span><br><span class="line">  breaks: <span class="literal">true</span></span><br><span class="line">  smartLists: <span class="literal">true</span></span><br><span class="line">  smartypants: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Stylus</span></span><br><span class="line">stylus:</span><br><span class="line">  compress: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: github</span><br><span class="line">  repository: https://github.com/cnfeat/cnfeat.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">http://www.jianshu.com/p/05289a4bc8b2</a></p>
+<h2 id="https-www-zybuluo-com-mdeditor-url-https-www-zybuluo-com-static-editor-md-help-markdown"><a href="#https-www-zybuluo-com-mdeditor-url-https-www-zybuluo-com-static-editor-md-help-markdown" class="headerlink" title="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown"></a><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown</a></h2></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始:&gt;https://github.com </span><br><span class="line">regist=&gt;operation: 注册github帐号</span><br><span class="line">createresp=&gt;operation: 创建代码仓库 (bruce03.github.io)</span><br><span class="line">installgit=&gt;operation: 安装github客户端</span><br><span class="line">installnode=&gt;operation: 安装node.js</span><br><span class="line">installnpm=&gt;operation: 安装npm</span><br><span class="line">installhexo=&gt;operation: 安装hexo</span><br><span class="line">hexoinit=&gt;operation:  初始化hexo</span><br><span class="line">hexoconfig=&gt;operation:  配置hexo</span><br><span class="line">hexo=&gt;operation:  创建，生成，运行，发布</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;regist-&gt;createresp-&gt;installgit-&gt;installnode-&gt;installnpm-&gt;installhexo-&gt;hexoinit-&gt;hexoconfig-&gt;hexo</span><br><span class="line">hexo-&gt;io</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../images/20160524-Hexo-and-git-build-blog/flow.PNG" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/30/20160430-Baidu-Ife-task16/" rel="next" title="Baidu Ife 学院题目学习 Task16">
+                <i class="fa fa-chevron-left"></i> Baidu Ife 学院题目学习 Task16
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.png"
+               alt="Bruce He" />
+          <p class="site-author-name" itemprop="name">Bruce He</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">Kategorien</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-github-搭建静态博客"><span class="nav-number">1.</span> <span class="nav-text">hexo + github 搭建静态博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装npm"><span class="nav-number">1.3.</span> <span class="nav-text">安装npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建blog"><span class="nav-number">1.5.</span> <span class="nav-text">搭建blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-配置"><span class="nav-number">1.6.</span> <span class="nav-text">GitHub 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-注册帐号"><span class="nav-number">1.6.1.</span> <span class="nav-text">1. 注册帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-新建-repositories（仓库）"><span class="nav-number">1.6.2.</span> <span class="nav-text">4. 新建 repositories（仓库）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-常用命令"><span class="nav-number">1.6.3.</span> <span class="nav-text">5. 常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#blog-头部配置"><span class="nav-number">1.6.4.</span> <span class="nav-text">blog 头部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo配置文件说明"><span class="nav-number">1.6.5.</span> <span class="nav-text">hexo配置文件说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https-www-zybuluo-com-mdeditor-url-https-www-zybuluo-com-static-editor-md-help-markdown"><span class="nav-number">1.7.</span> <span class="nav-text">https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bruce He</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
